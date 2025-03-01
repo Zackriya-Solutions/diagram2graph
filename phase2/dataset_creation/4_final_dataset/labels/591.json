@@ -1,0 +1,131 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Scan Bar code"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "\"Reader\" decrypts message and sends it to \"3D object management interface\""
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Check the website"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "The back-end server checks data and compares it with \"3D objects database\""
+        },
+        {
+            "id": "6",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Does data match the detail in \"3D obects database\""
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "An error message is displayed on the user screen"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "The 3D object is displayed on the user screen"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Scan Bar code",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Scan Bar code",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "\"Reader\" decrypts message and sends it to \"3D object management interface\"",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "\"Reader\" decrypts message and sends it to \"3D object management interface\"",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Check the website",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Check the website",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "The back-end server checks data and compares it with \"3D objects database\"",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "The back-end server checks data and compares it with \"3D objects database\"",
+            "target": "6",
+            "target_type": "decision",
+            "target_label": "Does data match the detail in \"3D obects database\"",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Does data match the detail in \"3D obects database\"",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "An error message is displayed on the user screen",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Does data match the detail in \"3D obects database\"",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "The 3D object is displayed on the user screen",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        }
+    ]
+}

@@ -1,0 +1,176 @@
+{
+    "nodes": [
+        {
+            "id": "begin",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "BEGIN"
+        },
+        {
+            "id": "enter_limit",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Enter Limit"
+        },
+        {
+            "id": "initialize_number",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Initialize number"
+        },
+        {
+            "id": "set_sum_to_0",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Set Sum equal to 0"
+        },
+        {
+            "id": "do",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "DO"
+        },
+        {
+            "id": "if_sum_greater_than_limit",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "If Sum > Limit"
+        },
+        {
+            "id": "update_values",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Update values"
+        },
+        {
+            "id": "decrease_loss",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Decrease loss"
+        },
+        {
+            "id": "display_number_and_sum",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Display Number and Sum"
+        },
+        {
+            "id": "end",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "END"
+        }
+    ],
+    "edges": [
+        {
+            "source": "begin",
+            "source_type": "start",
+            "source_label": "BEGIN",
+            "target": "enter_limit",
+            "target_type": "process",
+            "target_label": "Enter Limit",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "enter_limit",
+            "source_type": "process",
+            "source_label": "Enter Limit",
+            "target": "initialize_number",
+            "target_type": "process",
+            "target_label": "Initialize number",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "initialize_number",
+            "source_type": "process",
+            "source_label": "Initialize number",
+            "target": "set_sum_to_0",
+            "target_type": "process",
+            "target_label": "Set Sum equal to 0",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "set_sum_to_0",
+            "source_type": "process",
+            "source_label": "Set Sum equal to 0",
+            "target": "do",
+            "target_type": "process",
+            "target_label": "DO",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "do",
+            "source_type": "process",
+            "source_label": "DO",
+            "target": "if_sum_greater_than_limit",
+            "target_type": "decision",
+            "target_label": "If Sum > Limit",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "if_sum_greater_than_limit",
+            "source_type": "decision",
+            "source_label": "If Sum > Limit",
+            "target": "update_values",
+            "target_type": "process",
+            "target_label": "Update values",
+            "type_of_edge": "solid",
+            "relationship_value": "false",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "if_sum_greater_than_limit",
+            "source_type": "decision",
+            "source_label": "If Sum > Limit",
+            "target": "display_number_and_sum",
+            "target_type": "process",
+            "target_label": "Display Number and Sum",
+            "type_of_edge": "solid",
+            "relationship_value": "true",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "update_values",
+            "source_type": "process",
+            "source_label": "Update values",
+            "target": "decrease_loss",
+            "target_type": "process",
+            "target_label": "Decrease loss",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "decrease_loss",
+            "source_type": "process",
+            "source_label": "Decrease loss",
+            "target": "do",
+            "target_type": "process",
+            "target_label": "DO",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "display_number_and_sum",
+            "source_type": "process",
+            "source_label": "Display Number and Sum",
+            "target": "end",
+            "target_type": "terminator",
+            "target_label": "END",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

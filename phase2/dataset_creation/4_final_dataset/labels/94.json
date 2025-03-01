@@ -1,0 +1,136 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Initialize i"
+        },
+        {
+            "id": "3",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Terminate Process"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Enough Quotes?"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Ready"
+        },
+        {
+            "id": "6",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Purchase Approval?"
+        },
+        {
+            "id": "7",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Initialize i",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Initialize i",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Terminate Process",
+            "type_of_edge": "solid",
+            "relationship_value": "i>N",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Initialize i",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "Enough Quotes?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Enough Quotes?",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Initialize i",
+            "type_of_edge": "solid",
+            "relationship_value": "tender++",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Enough Quotes?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Ready",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Ready",
+            "target": "6",
+            "target_type": "decision",
+            "target_label": "Purchase Approval?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Purchase Approval?",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Terminate Process",
+            "type_of_edge": "solid",
+            "relationship_value": "Rejected",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Purchase Approval?",
+            "target": "7",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        }
+    ]
+}

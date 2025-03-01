@@ -1,0 +1,200 @@
+{
+    "nodes": [
+        {
+            "id": "start",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "hard_work",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Hard work"
+        },
+        {
+            "id": "franchise",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Franchise"
+        },
+        {
+            "id": "success",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Success"
+        },
+        {
+            "id": "order_more",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Order more"
+        },
+        {
+            "id": "sold",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Sold"
+        },
+        {
+            "id": "expandable",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Expandable"
+        },
+        {
+            "id": "open_more_store",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Open more store"
+        },
+        {
+            "id": "new_strategy",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "New Strategy"
+        },
+        {
+            "id": "end",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source": "start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "hard_work",
+            "target_type": "process",
+            "target_label": "Hard work",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "hard_work",
+            "source_type": "process",
+            "source_label": "Hard work",
+            "target": "franchise",
+            "target_type": "process",
+            "target_label": "Franchise",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+
+        {
+            "source": "hard_work",
+            "source_type": "process",
+            "source_label": "Hard work",
+            "target": "new_strategy",
+            "target_type": "process",
+            "target_label": "New Strategy",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+
+        {
+            "source": "franchise",
+            "source_type": "process",
+            "source_label": "Franchise",
+            "target": "success",
+            "target_type": "decision",
+            "target_label": "Success",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "success",
+            "source_type": "decision",
+            "source_label": "Success",
+            "target": "order_more",
+            "target_type": "process",
+            "target_label": "Order more",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "success",
+            "source_type": "decision",
+            "source_label": "Success",
+            "target": "new_strategy",
+            "target_type": "process",
+            "target_label": "New Strategy",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "order_more",
+            "source_type": "process",
+            "source_label": "Order more",
+            "target": "sold",
+            "target_type": "decision",
+            "target_label": "Sold",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "sold",
+            "source_type": "decision",
+            "source_label": "Sold",
+            "target": "expandable",
+            "target_type": "decision",
+            "target_label": "Expandable",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "sold",
+            "source_type": "decision",
+            "source_label": "Sold",
+            "target": "new_strategy",
+            "target_type": "process",
+            "target_label": "New Strategy",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "expandable",
+            "source_type": "decision",
+            "source_label": "Expandable",
+            "target": "open_more_store",
+            "target_type": "process",
+            "target_label": "Open more store",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "expandable",
+            "source_type": "decision",
+            "source_label": "Expandable",
+            "target": "end",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "open_more_store",
+            "source_type": "process",
+            "source_label": "Open more store",
+            "target": "success",
+            "target_type": "decision",
+            "target_label": "Success",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

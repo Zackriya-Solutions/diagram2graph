@@ -1,0 +1,159 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Initialize parameters of particle swarm"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Calculate the fitness function"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Compare with others fitness"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Update the global best position of particle swarm"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Find overall performance"
+        },
+        {
+            "id": "7",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Does it satisfy the termination conditions?"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Display the results"
+        },
+        {
+            "id": "9",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Initialize parameters of particle swarm",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Initialize parameters of particle swarm",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Calculate the fitness function",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Calculate the fitness function",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Compare with others fitness",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Compare with others fitness",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Update the global best position of particle swarm",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Update the global best position of particle swarm",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Find overall performance",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Find overall performance",
+            "target": "7",
+            "target_type": "decision",
+            "target_label": "Does it satisfy the termination conditions?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Does it satisfy the termination conditions?",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Calculate the fitness function",
+            "type_of_edge": "solid",
+            "relationship_value": "N",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Does it satisfy the termination conditions?",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "Display the results",
+            "type_of_edge": "solid",
+            "relationship_value": "Y",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "8",
+            "source_type": "process",
+            "source_label": "Display the results",
+            "target": "9",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

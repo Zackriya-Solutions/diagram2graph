@@ -1,0 +1,125 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Greet customer"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Talk with them"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Need help"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Call manager"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Manager assist"
+        },
+        {
+            "id": "7",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Greet customer",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Greet customer",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Talk with them",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Talk with them",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "Need help",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Need help",
+            "target": "7",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Need help",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Call manager",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Call manager",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Manager assist",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Manager assist",
+            "target": "7",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

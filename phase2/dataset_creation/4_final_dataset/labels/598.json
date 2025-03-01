@@ -1,0 +1,136 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "New Member"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Login"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Authentication"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "D1"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Validation"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Print info"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "D2"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "New Member",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Login",
+            "type_of_edge": "solid",
+            "relationship_value": "User name Password",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Login",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Authentication",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Authentication",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "D1",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Authentication",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Validation",
+            "type_of_edge": "solid",
+            "relationship_value": "ADP Username\nADP Password",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Authentication",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Print info",
+            "type_of_edge": "solid",
+            "relationship_value": "If not a member",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Authentication",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Validation",
+            "type_of_edge": "solid",
+            "relationship_value": "if existing member",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Print info",
+            "target": "1",
+            "target_type": "start",
+            "target_label": "New Member",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Validation",
+            "target": "8",
+            "target_type": "decision",
+            "target_label": "D2",
+            "type_of_edge": "solid",
+            "relationship_value": "ADP Username\nADP Password",
+            "relationship_type": "follows"
+        }
+    ]
+}

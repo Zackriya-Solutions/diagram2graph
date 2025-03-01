@@ -1,0 +1,142 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "START"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "count=1"
+        },
+        {
+            "id": "3",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "count<=3"
+        },
+        {
+            "id": "4",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "STOP"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "INPUT"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "p*n*r/100"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "PRINT"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "count=count+1"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "START",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "count=1",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "count=1",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "count<=3",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "count<=3",
+            "target": "4",
+            "target_type": "terminator",
+            "target_label": "STOP",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "count<=3",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "INPUT",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "INPUT",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "p*n*r/100",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "p*n*r/100",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "PRINT",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "PRINT",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "count=count+1",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "8",
+            "source_type": "process",
+            "source_label": "count=count+1",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "count<=3",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

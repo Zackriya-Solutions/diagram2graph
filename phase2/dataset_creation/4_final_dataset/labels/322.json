@@ -1,0 +1,108 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Read"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Update value"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Print"
+        },
+        {
+            "id": "5",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "X>0"
+        },
+        {
+            "id": "6",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Read",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Read",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Update value",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Update value",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Print",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Print",
+            "target": "5",
+            "target_type": "decision",
+            "target_label": "X>0",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "X>0",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Update value",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "X>0",
+            "target": "6",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "branches"
+        }
+    ]
+}

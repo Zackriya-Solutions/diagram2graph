@@ -1,0 +1,159 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "START"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "COMPUTE LOCAL ADMIN GROUP NAME"
+        },
+        {
+            "id": "3",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "ADD OR REMOVE?"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Update"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "ADD USERS TO GROUP"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Personalize"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "DISPLAY CURRENT MEMBERS"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Check"
+        },
+        {
+            "id": "9",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "END"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "START",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "COMPUTE LOCAL ADMIN GROUP NAME",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "COMPUTE LOCAL ADMIN GROUP NAME",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "ADD OR REMOVE?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "ADD OR REMOVE?",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Update",
+            "type_of_edge": "solid",
+            "relationship_value": "ADD",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Update",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "ADD USERS TO GROUP",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "ADD USERS TO GROUP",
+            "target": "9",
+            "target_type": "terminator",
+            "target_label": "END",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "ADD OR REMOVE?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Personalize",
+            "type_of_edge": "solid",
+            "relationship_value": "REMOVE",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Personalize",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "DISPLAY CURRENT MEMBERS",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "DISPLAY CURRENT MEMBERS",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "Check",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "8",
+            "source_type": "process",
+            "source_label": "Check",
+            "target": "9",
+            "target_type": "terminator",
+            "target_label": "END",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

@@ -1,0 +1,159 @@
+{
+    "nodes": [
+        {
+            "id": "0",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "start"
+        },
+        {
+            "id": "1",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "have you ever draw big flowchart"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Awesome"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Draw"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Okay"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "it's just boxes How hard can it be?"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "easy"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Langchain is the best frameworki"
+        },
+        {
+            "id": "8",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source": "0",
+            "source_type": "start",
+            "source_label": "start",
+            "target": "1",
+            "target_type": "decision",
+            "target_label": "have you ever draw big flowchart",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "1",
+            "source_type": "decision",
+            "source_label": "have you ever draw big flowchart",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Awesome",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "1",
+            "source_type": "decision",
+            "source_label": "have you ever draw big flowchart",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "it's just boxes How hard can it be?",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Awesome",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Draw",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Draw",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Okay",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Okay",
+            "target": "8",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "it's just boxes How hard can it be?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "easy",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "easy",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Langchain is the best frameworki",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "Langchain is the best frameworki",
+            "target": "8",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

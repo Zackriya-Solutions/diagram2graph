@@ -1,0 +1,142 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Identify Problem"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "work on it"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Note them down in a diagram or table"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Ask for assistant"
+        },
+        {
+            "id": "6",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Need more help?"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Find solutions to the root causes identified"
+        },
+        {
+            "id": "8",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Identify Problem",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Identify Problem",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "work on it",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "work on it",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Note them down in a diagram or table",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Note them down in a diagram or table",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Ask for assistant",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Ask for assistant",
+            "target": "6",
+            "target_type": "decision",
+            "target_label": "Need more help?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Need more help?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Ask for assistant",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Need more help?",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Find solutions to the root causes identified",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "Find solutions to the root causes identified",
+            "target": "8",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

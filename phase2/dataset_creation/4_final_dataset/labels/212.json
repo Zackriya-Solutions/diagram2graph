@@ -1,0 +1,125 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "START"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "K is equal to 0"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "LOOP"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "YES OR NO?"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Calculate K as K+1"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "PRINT K"
+        },
+        {
+            "id": "7",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "STOP"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "START",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "K is equal to 0",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "K is equal to 0",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "LOOP",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "LOOP",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "YES OR NO?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "YES OR NO?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Calculate K as K+1",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Calculate K as K+1",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "LOOP",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "YES OR NO?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "PRINT K",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "PRINT K",
+            "target": "7",
+            "target_type": "terminator",
+            "target_label": "STOP",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

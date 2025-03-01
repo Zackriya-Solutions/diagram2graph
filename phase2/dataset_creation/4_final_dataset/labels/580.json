@@ -1,0 +1,114 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Image"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "3D point cloud"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Threshold"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Preprocessing"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Information"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Gesture recognition"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Image"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "process",
+            "source_label": "Image",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "3D point cloud",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "3D point cloud",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Threshold",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Threshold",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Preprocessing",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Preprocessing",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Information",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Information",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Gesture recognition",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Gesture recognition",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Image",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

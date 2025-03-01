@@ -1,0 +1,85 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Obect Detected"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Drive Forwards"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Turn Robot"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Obect Detected",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Obect Detected",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Drive Forwards",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Obect Detected",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Turn Robot",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Drive Forwards",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Obect Detected",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Turn Robot",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Obect Detected",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

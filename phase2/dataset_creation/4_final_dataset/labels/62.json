@@ -1,0 +1,159 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Begin"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Initialize variables"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "INPUT numbers"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "All numbers been entered?"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Average=total/numbers"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Print Output"
+        },
+        {
+            "id": "7",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Stop"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "INPUT latest"
+        },
+        {
+            "id": "9",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "total=total+latest"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Begin",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Initialize variables",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Initialize variables",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "INPUT numbers",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "INPUT numbers",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "All numbers been entered?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "All numbers been entered?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Average=total/numbers",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Average=total/numbers",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Print Output",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Print Output",
+            "target": "7",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "All numbers been entered?",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "INPUT latest",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "8",
+            "source_type": "process",
+            "source_label": "INPUT latest",
+            "target": "9",
+            "target_type": "process",
+            "target_label": "total=total+latest",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "9",
+            "source_type": "process",
+            "source_label": "total=total+latest",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "All numbers been entered?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

@@ -1,0 +1,148 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Edit Video"
+        },
+        {
+            "id": "3",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Short video"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Click to upload"
+        },
+        {
+            "id": "5",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "VIP user?"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Sign Up"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Login"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Browse to upload"
+        },
+        {
+            "id": "9",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Finish"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Edit Video",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Edit Video",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "Short video",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "Short video",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Click to upload",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Click to upload",
+            "target": "5",
+            "target_type": "decision",
+            "target_label": "VIP user?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "VIP user?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Sign Up",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "VIP user?",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Login",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "Login",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "Browse to upload",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "8",
+            "source_type": "process",
+            "source_label": "Browse to upload",
+            "target": "9",
+            "target_type": "terminator",
+            "target_label": "Finish",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

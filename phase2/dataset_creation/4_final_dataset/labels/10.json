@@ -1,0 +1,63 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Begin"
+        },
+        {
+            "id": "2",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Are you okay"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "DO SOMETHING"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "DO SOMETHING"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Begin",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Are you okay",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Are you okay",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "DO SOMETHING",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Are you okay",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "DO SOMETHING",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "branches"
+        }
+    ]
+}

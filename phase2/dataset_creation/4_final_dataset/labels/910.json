@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Is your apps main goal support the product?"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Consider hit apps"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Is your app inherently viral?"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Consider Free with IAPs"
+        },
+        {
+            "id": "6",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Does user have Valid ID?"
+        },
+        {
+            "id": "7",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Can you easily explain the apps value in screenshots?"
+        },
+        {
+            "id": "8",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Is the app itself your core revenue stream"
+        },
+        {
+            "id": "9",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Paid Service"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Is your apps main goal support the product?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Is your apps main goal support the product?",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Consider hit apps",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Is your apps main goal support the product?",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "Is your app inherently viral?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Is your app inherently viral?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Consider Free with IAPs",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Is your app inherently viral?",
+            "target": "6",
+            "target_type": "decision",
+            "target_label": "Does user have Valid ID?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Does user have Valid ID?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Consider Free with IAPs",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Does user have Valid ID?",
+            "target": "7",
+            "target_type": "decision",
+            "target_label": "Can you easily explain the apps value in screenshots?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Can you easily explain the apps value in screenshots?",
+            "target": "8",
+            "target_type": "decision",
+            "target_label": "Is the app itself your core revenue stream",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Can you easily explain the apps value in screenshots?",
+            "target": "9",
+            "target_type": "process",
+            "target_label": "Paid Service",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "8",
+            "source_type": "decision",
+            "source_label": "Is the app itself your core revenue stream",
+            "target": "9",
+            "target_type": "process",
+            "target_label": "Paid Service",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

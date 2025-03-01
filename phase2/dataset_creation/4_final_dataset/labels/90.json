@@ -1,0 +1,159 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Define Optimization Problem"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Calculate matrix"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Obtain result"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Perform Data Mining Algorithms"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Evaluate"
+        },
+        {
+            "id": "7",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Meet Design Requirements?"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Modify Mining Rules"
+        },
+        {
+            "id": "9",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Stop"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Define Optimization Problem",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Define Optimization Problem",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Calculate matrix",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Calculate matrix",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Obtain result",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Obtain result",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Perform Data Mining Algorithms",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Perform Data Mining Algorithms",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Evaluate",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Evaluate",
+            "target": "7",
+            "target_type": "decision",
+            "target_label": "Meet Design Requirements?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Meet Design Requirements?",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "Modify Mining Rules",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "8",
+            "source_type": "process",
+            "source_label": "Modify Mining Rules",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Perform Data Mining Algorithms",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Meet Design Requirements?",
+            "target": "9",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        }
+    ]
+}

@@ -1,0 +1,159 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Declare variables a, b, c, D, x1, x2, rp, ip"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Calculate Discriminant, D< b^2-4ac"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "is D>=0?"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "r1 ← (-b +√D) / 2a\nr2 ← (-b +√D) / 2a"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "ip <- -b/21\nrp <- √-D / 2a"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "x1 <- ip + j*ip\nx2 <- ip - j*ip"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Display r1 and r2"
+        },
+        {
+            "id": "9",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Declare variables a, b, c, D, x1, x2, rp, ip",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Declare variables a, b, c, D, x1, x2, rp, ip",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Calculate Discriminant, D< b^2-4ac",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Calculate Discriminant, D< b^2-4ac",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "is D>=0?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "is D>=0?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "r1 ← (-b +√D) / 2a\nr2 ← (-b +√D) / 2a",
+            "type_of_edge": "solid",
+            "relationship_value": "TRUE",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "is D>=0?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "ip <- -b/21\nrp <- √-D / 2a",
+            "type_of_edge": "solid",
+            "relationship_value": "FALSE",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "ip <- -b/21\nrp <- √-D / 2a",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "x1 <- ip + j*ip\nx2 <- ip - j*ip",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "r1 ← (-b +√D) / 2a\nr2 ← (-b +√D) / 2a",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "Display r1 and r2",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "x1 <- ip + j*ip\nx2 <- ip - j*ip",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "Display r1 and r2",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "8",
+            "source_type": "process",
+            "source_label": "Display r1 and r2",
+            "target": "9",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

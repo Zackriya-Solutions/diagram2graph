@@ -1,0 +1,80 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "START"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Take Inputs"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Perimeter = 2 * (length + width)"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Print the perimeter"
+        },
+        {
+            "id": "5",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "END"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "START",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Take Inputs",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Take Inputs",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Perimeter = 2 * (length + width)",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Perimeter = 2 * (length + width)",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Print the perimeter",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Print the perimeter",
+            "target": "5",
+            "target_type": "terminator",
+            "target_label": "END",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

@@ -1,0 +1,165 @@
+{
+    "nodes": [
+        {
+            "id": "n1",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Assessment"
+        },
+        {
+            "id": "n2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Team work"
+        },
+        {
+            "id": "n3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Work"
+        },
+        {
+            "id": "n4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Gather"
+        },
+        {
+            "id": "n5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Complete"
+        },
+        {
+            "id": "n6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Closure"
+        },
+        {
+            "id": "n7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Primary closure"
+        },
+        {
+            "id": "n8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Bandaging"
+        },
+        {
+            "id": "n9",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Delayed primary closure"
+        },
+        {
+            "id": "n10",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Secondary closure"
+        }
+    ],
+    "edges": [
+        {
+            "source": "n1",
+            "source_type": "process",
+            "source_label": "Assessment",
+            "target": "n2",
+            "target_type": "process",
+            "target_label": "Team work",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "n2",
+            "source_type": "process",
+            "source_label": "Team work",
+            "target": "n3",
+            "target_type": "process",
+            "target_label": "Work",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "n3",
+            "source_type": "process",
+            "source_label": "Work",
+            "target": "n4",
+            "target_type": "process",
+            "target_label": "Gather",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "n4",
+            "source_type": "process",
+            "source_label": "Gather",
+            "target": "n5",
+            "target_type": "process",
+            "target_label": "Complete",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "n5",
+            "source_type": "process",
+            "source_label": "Complete",
+            "target": "n6",
+            "target_type": "process",
+            "target_label": "Closure",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "n6",
+            "source_type": "process",
+            "source_label": "Closure",
+            "target": "n7",
+            "target_type": "process",
+            "target_label": "Primary closure",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "n6",
+            "source_type": "process",
+            "source_label": "Closure",
+            "target": "n8",
+            "target_type": "process",
+            "target_label": "Bandaging",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "n8",
+            "source_type": "process",
+            "source_label": "Bandaging",
+            "target": "n9",
+            "target_type": "process",
+            "target_label": "Delayed primary closure",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "n8",
+            "source_type": "process",
+            "source_label": "Bandaging",
+            "target": "n10",
+            "target_type": "process",
+            "target_label": "Secondary closure",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        }
+    ]
+}

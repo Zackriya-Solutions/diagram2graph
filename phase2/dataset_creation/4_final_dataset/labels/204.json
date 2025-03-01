@@ -1,0 +1,153 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "guess number"
+        },
+        {
+            "id": "3",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "if<=10"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "small number"
+        },
+        {
+            "id": "5",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "if>10 and <=80"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "medium number"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "large number"
+        },
+        {
+            "id": "8",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "end"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "guess number",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "guess number",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "if<=10",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "if<=10",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "small number",
+            "type_of_edge": "solid",
+            "relationship_value": "true",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "if<=10",
+            "target": "5",
+            "target_type": "decision",
+            "target_label": "if>10 and <=80",
+            "type_of_edge": "solid",
+            "relationship_value": "false",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "if>10 and <=80",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "medium number",
+            "type_of_edge": "solid",
+            "relationship_value": "true",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "if>10 and <=80",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "large number",
+            "type_of_edge": "solid",
+            "relationship_value": "false",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "small number",
+            "target": "8",
+            "target_type": "terminator",
+            "target_label": "end",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "medium number",
+            "target": "8",
+            "target_type": "terminator",
+            "target_label": "end",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "large number",
+            "target": "8",
+            "target_type": "terminator",
+            "target_label": "end",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

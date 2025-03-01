@@ -1,0 +1,165 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Begin"
+        },
+        {
+            "id": "2",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Does the User has an account?"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Go to website"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "\"Open an account\" page open"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "User enter email"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "User enter password"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "User clicks on the login button"
+        },
+        {
+            "id": "8",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Are the email and password is correct?"
+        },
+        {
+            "id": "9",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Close"
+        },
+        {
+            "id": "10",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Error message appears"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Begin",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Does the User has an account?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Does the User has an account?",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Go to website",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Go to website",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "\"Open an account\" page open",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Does the User has an account?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "User enter email",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "User enter email",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "User enter password",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "User enter password",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "User clicks on the login button",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "User clicks on the login button",
+            "target": "8",
+            "target_type": "decision",
+            "target_label": "Are the email and password is correct?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "8",
+            "source_type": "decision",
+            "source_label": "Are the email and password is correct?",
+            "target": "9",
+            "target_type": "process",
+            "target_label": "Close",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "8",
+            "source_type": "decision",
+            "source_label": "Are the email and password is correct?",
+            "target": "10",
+            "target_type": "process",
+            "target_label": "Error message appears",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        }
+    ]
+}

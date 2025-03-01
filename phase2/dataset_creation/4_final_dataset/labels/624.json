@@ -1,0 +1,181 @@
+{
+    "nodes": [
+        {
+            "id": "fruits",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Fruits"
+        },
+        {
+            "id": "input_mango_pitaya_durian",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Input mango, pitaya, durian"
+        },
+        {
+            "id": "prefer_pitaya_to_durian",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Prefer pitaya to durian?"
+        },
+        {
+            "id": "prefer_mango_to_pitaya",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Prefer mango to pitaya?"
+        },
+        {
+            "id": "prefer_mango_durian",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Prefer mango to durian?"
+        },
+        {
+            "id": "go_for_mango",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Go for mango"
+        },
+        {
+            "id": "go_for_pitaya",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Go for pitaya"
+        },
+        {
+            "id": "go_for_pitaya_1",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Go for pitaya"
+        },
+        {
+            "id": "end",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "fruits",
+            "source_type": "start",
+            "source_label": "Fruits",
+            "target": "input_mango_pitaya_durian",
+            "target_type": "process",
+            "target_label": "Input mango, pitaya, durian",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "input_mango_pitaya_durian",
+            "source_type": "process",
+            "source_label": "Input mango, pitaya, durian",
+            "target": "prefer_mango_to_pitaya",
+            "target_type": "decision",
+            "target_label": "Prefer mango to pitaya?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "prefer_mango_to_pitaya",
+            "source_type": "decision",
+            "source_label": "Prefer mango to pitaya?",
+            "target": "prefer_pitaya_to_durian",
+            "target_type": "decision",
+            "target_label": "Prefer pitaya to durian?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source_": "prefer_mango_to_pitaya",
+            "source_type": "decision",
+            "source_label": "Prefer mango to pitaya?",
+            "target": "prefer_mango_durian",
+            "target_type": "decision",
+            "target_label": "Prefer mango to durian?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source_": "prefer_pitaya_to_durian",
+            "source_type": "decision",
+            "source_label": "Prefer pitaya to durian?",
+            "target": "go_for_mango",
+            "target_type": "process",
+            "target_label": "Go for mango",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source_": "prefer_pitaya_to_durian",
+            "source_type": "decision",
+            "source_label": "Prefer pitaya to durian?",
+            "target": "go_for_mango",
+            "target_type": "process",
+            "target_label": "Go for mango",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source_": "prefer_mango_durian",
+            "source_type": "decision",
+            "source_label": "Prefer mango to durian?",
+            "target": "go_for_pitaya_",
+            "target_type": "process",
+            "target_label": "Go for pitaya",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source_": "prefer_mango_durian",
+            "source_type": "decision",
+            "source_label": "Prefer mango to durian?",
+            "target": "go_for_pitaya_1",
+            "target_type": "process",
+            "target_label": "Go for pitaya",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source_": "go_for_mango",
+            "source_type": "process",
+            "source_label": "Go for mango",
+            "target": "end",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "go_for_pitaya",
+            "source_type": "process",
+            "source_label": "Go for pitaya",
+            "target": "end",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "go_for_pitaya_1",
+            "source_type": "process",
+            "source_label": "Go for pitaya",
+            "target": "end",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

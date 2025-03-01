@@ -1,0 +1,210 @@
+{
+    "nodes": [
+        {
+            "id": "customer_consulting",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Customer Consulting and Quotation"
+        },
+        {
+            "id": "deal",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Deal?"
+        },
+        {
+            "id": "go_home",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Go home"
+        },
+        {
+            "id": "invoice",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Invoice"
+        },
+        {
+            "id": "shipping",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Shipping"
+        },
+        {
+            "id": "custom_clearance",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Custom Clearance"
+        },
+        {
+            "id": "payment_mode",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Payment mode"
+        },
+        {
+            "id": "delivery",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Delivery"
+        },
+        {
+            "id": "service_payment",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Service Payment"
+        },
+        {
+            "id": "pay_foreign_exchange",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Pay Foreign Exchange?"
+        },
+        {
+            "id": "payment",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Payment"
+        },
+        {
+            "id": "stop",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Stop"
+        }
+    ],
+    "edges": [
+        {
+            "source": "customer_consulting",
+            "source_type": "process",
+            "source_label": "Customer Consulting and Quotation",
+            "target": "deal",
+            "target_type": "decision",
+            "target_label": "Deal?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "deal",
+            "source_type": "decision",
+            "source_label": "Deal?",
+            "target": "invoice",
+            "target_type": "process",
+            "target_label": "Invoice",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "deal",
+            "source_type": "decision",
+            "source_label": "Deal?",
+            "target": "go_home",
+            "target_type": "process",
+            "target_label": "Go home",
+            "type_of_edge": "dashed",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "invoice",
+            "source_type": "process",
+            "source_label": "Invoice",
+            "target": "shipping",
+            "target_type": "process",
+            "target_label": "Shipping",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "shipping",
+            "source_type": "process",
+            "source_label": "Shipping",
+            "target": "custom_clearance",
+            "target_type": "process",
+            "target_label": "Custom Clearance",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "custom_clearance",
+            "source_type": "process",
+            "source_label": "Custom Clearance",
+            "target": "payment_mode",
+            "target_type": "process",
+            "target_label": "Payment mode",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "payment_mode",
+            "source_type": "process",
+            "source_label": "Payment mode",
+            "target": "delivery",
+            "target_type": "process",
+            "target_label": "Delivery",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "delivery",
+            "source_type": "process",
+            "source_label": "Delivery",
+            "target": "service_payment",
+            "target_type": "process",
+            "target_label": "Service Payment",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "service_payment",
+            "source_type": "process",
+            "source_label": "Service Payment",
+            "target": "pay_foreign_exchange",
+            "target_type": "decision",
+            "target_label": "Pay Foreign Exchange?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "pay_foreign_exchange",
+            "source_type": "decision",
+            "source_label": "Pay Foreign Exchange?",
+            "target": "payment",
+            "target_type": "process",
+            "target_label": "Payment",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "pay_foreign_exchange",
+            "source_type": "decision",
+            "source_label": "Pay Foreign Exchange?",
+            "target": "stop",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "dashed",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "payment",
+            "source_type": "process",
+            "source_label": "Payment",
+            "target": "stop",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

@@ -1,0 +1,148 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Select Topic"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Background Search"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Develop Search Strategy"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Task assign"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Evaluate Information for Accuracy Reliability"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Discuss with others"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Revision of Paper"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Report"
+        },
+        {
+            "id": "9",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Submit"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "process",
+            "source_label": "Select Topic",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Background Search",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Background Search",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Develop Search Strategy",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Develop Search Strategy",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Task assign",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Task assign",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Evaluate Information for Accuracy Reliability",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Evaluate Information for Accuracy Reliability",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Discuss with others",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Discuss with others",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Revision of Paper",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "Revision of Paper",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "Report",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "Revision of Paper",
+            "target": "9",
+            "target_type": "process",
+            "target_label": "Submit",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

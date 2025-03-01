@@ -1,0 +1,147 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Begin"
+        },
+        {
+            "id": "2",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Do you want to do this?"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Don't do it"
+        },
+        {
+            "id": "4",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        },
+        {
+            "id": "5",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Will it likely end in disaster?"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Do it"
+        },
+        {
+            "id": "7",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Good Movie?"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Begin",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Do you want to do this?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Do you want to do this?",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Don't do it",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Don't do it",
+            "target": "4",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Do you want to do this?",
+            "target": "5",
+            "target_type": "decision",
+            "target_label": "Will it likely end in disaster?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Will it likely end in disaster?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Do it",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Do it",
+            "target": "4",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Will it likely end in disaster?",
+            "target": "7",
+            "target_type": "decision",
+            "target_label": "Good Movie?",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Good Movie?",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Don't do it",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Good Movie?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Do it",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        }
+    ]
+}

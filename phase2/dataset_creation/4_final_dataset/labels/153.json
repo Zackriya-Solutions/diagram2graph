@@ -1,0 +1,119 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Begin"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Switch On lights"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Turn the LED connected to QO off"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Check if the LDR connected to A1 is in darkness"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Switch Off lights"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Turn the LED connected to QO on"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Begin",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Switch On lights",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Switch On lights",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Turn the LED connected to QO off",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Turn the LED connected to QO off",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "Check if the LDR connected to A is in darkness",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Check if the LDR connected to A is in darkness",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Switch Off lights",
+            "type_of_edge": "solid",
+            "relationship_value": "N",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Switch Off lights",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "Check if the LDR connected to A is in darkness",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Check if the LDR connected to A is in darkness",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Turn the LED connected to QO on",
+            "type_of_edge": "solid",
+            "relationship_value": "Y",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Turn the LED connected to QO on",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "Check if the LDR connected to A is in darkness",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

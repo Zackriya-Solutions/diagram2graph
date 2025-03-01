@@ -1,0 +1,176 @@
+{
+    "nodes": [
+        {
+            "id": "start",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "round_1",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Round 1\nT = 1"
+        },
+        {
+            "id": "draw_lots",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Draw lots to select witness nodes"
+        },
+        {
+            "id": "binarize_block",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Binarize block"
+        },
+        {
+            "id": "packing_block",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Packing block"
+        },
+        {
+            "id": "block_verification",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Block verification"
+        },
+        {
+            "id": "finish",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Finish"
+        },
+        {
+            "id": "timeout_verification",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Timeout verification"
+        },
+        {
+            "id": "next_round_draw",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Next round draw"
+        },
+        {
+            "id": "authentication",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Authentication"
+        }
+    ],
+    "edges": [
+        {
+            "source": "start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "round_1",
+            "target_type": "process",
+            "target_label": "Round 1\nT = 1",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "round_1",
+            "source_type": "process",
+            "source_label": "Round 1\nT = 1",
+            "target": "draw_lots",
+            "target_type": "process",
+            "target_label": "Draw lots to select witness nodes",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "draw_lots",
+            "source_type": "process",
+            "source_label": "Draw lots to select witness nodes",
+            "target": "binarize_block",
+            "target_type": "process",
+            "target_label": "Binarize block",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "binarize_block",
+            "source_type": "process",
+            "source_label": "Binarize block",
+            "target": "packing_block",
+            "target_type": "process",
+            "target_label": "Packing block",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "packing_block",
+            "source_type": "process",
+            "source_label": "Packing block",
+            "target": "block_verification",
+            "target_type": "decision",
+            "target_label": "Block verification",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "block_verification",
+            "source_type": "decision",
+            "source_label": "Block verification",
+            "target": "finish",
+            "target_type": "terminator",
+            "target_label": "Finish",
+            "type_of_edge": "solid",
+            "relationship_value": "Success",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "block_verification",
+            "source_type": "decision",
+            "source_label": "Block verification",
+            "target": "timeout_verification",
+            "target_type": "process",
+            "target_label": "Timeout verification",
+            "type_of_edge": "solid",
+            "relationship_value": "Verification failed",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "authentication",
+            "source_type": "process",
+            "source_label": "Authentication",
+            "target": "binarize_block",
+            "target_type": "process",
+            "target_label": "Binarize block",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "timeout_verification",
+            "source_type": "decision",
+            "source_label": "Timeout verification",
+            "target": "next_round_draw",
+            "target_type": "process",
+            "target_label": "Next round draw",
+            "type_of_edge": "solid",
+            "relationship_value": "Timeout",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "next_round_draw",
+            "source_type": "process",
+            "source_label": "Next round draw",
+            "target": "draw_lots",
+            "target_type": "decision",
+            "target_label": "Draw lots to select witness nodes",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

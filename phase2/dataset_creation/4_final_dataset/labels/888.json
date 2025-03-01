@@ -1,0 +1,114 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Raw Materials"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Melting"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Forming"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Sampling"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Inspection and Testing"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Secondary Processing"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Warehousing"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "process",
+            "source_label": "Raw Materials",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Melting",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Melting",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Forming",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Forming",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Sampling",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Sampling",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Inspection and Testing",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Inspection and Testing",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Secondary Processing",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Secondary Processing",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Warehousing",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

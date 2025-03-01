@@ -1,0 +1,159 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Mail Invoice to Accounts Payable"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Review Invoice for Compliance"
+        },
+        {
+            "id": "3",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Invoice Meets Requirement?"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Don't accept"
+        },
+        {
+            "id": "5",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Approval?"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Place in queue"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Invoice Placed in Payment Queue"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Payment Processed"
+        },
+        {
+            "id": "9",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Action Taken, Issue Resolved?"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "process",
+            "source_label": "Mail Invoice to Accounts Payable",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Review Invoice for Compliance",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Review Invoice for Compliance",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "Invoice Meets Requirement?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "Invoice Meets Requirement?",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Don't accept",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "Invoice Meets Requirement?",
+            "target": "5",
+            "target_type": "decision",
+            "target_label": "Approval?",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Approval?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Place in queue",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Approval?",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Invoice Placed in Payment Queue",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "7",
+            "source_type": "process",
+            "source_label": "Invoice Placed in Payment Queue",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "Payment Processed",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "9",
+            "source_type": "decision",
+            "source_label": "Action Taken, Issue Resolved?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Place in queue",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "9",
+            "source_type": "decision",
+            "source_label": "Action Taken, Issue Resolved?",
+            "target": "5",
+            "target_type": "decision",
+            "target_label": "Approval?",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        }
+    ]
+}

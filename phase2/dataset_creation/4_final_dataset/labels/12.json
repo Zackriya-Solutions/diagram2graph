@@ -1,0 +1,136 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Login Profile"
+        },
+        {
+            "id": "2",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Still Logged in?"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Session time out"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Login Again"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Go On"
+        },
+        {
+            "id": "6",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Logged in?"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Pause Counting"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "process",
+            "source_label": "Login Profile",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Still Logged in?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Still Logged in?",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Session time out",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Session time out",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Login Again",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Still Logged in?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Go On",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Go On",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Still Logged in?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Login Again",
+            "target": "6",
+            "target_type": "decision",
+            "target_label": "Logged in?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Logged in?",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Pause Counting",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Logged in?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Go On",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        }
+    ]
+}

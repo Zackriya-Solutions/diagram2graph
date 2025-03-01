@@ -1,0 +1,193 @@
+{
+    "nodes": [
+      {
+        "id": "start",
+        "type_of_node": "start",
+        "shape": "start_event",
+        "label": "Start"
+      },
+      {
+        "id": "documentation_work",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Documentation Work"
+      },
+      {
+        "id": "print_cycle_count_sheets",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Print cycle count sheets"
+      },
+      {
+        "id": "perform_physical_count_of_stock",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Perform physical count of stock"
+      },
+      {
+        "id": "enter_physical_counts",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Enter physical counts"
+      },
+      {
+        "id": "report_differences",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Report differences"
+      },
+      {
+        "id": "recount_inventory",
+        "type_of_node": "decision",
+        "shape": "gateway",
+        "label": "Recount inventory?"
+      },
+      {
+        "id": "display_documents",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Display documents"
+      },
+      {
+        "id": "perform_physical_count_of_stock_1",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Perform physical count of stock"
+      },
+      {
+        "id": "post_inventory_documents",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Post inventory documents"
+      },
+      {
+        "id": "end",
+        "type_of_node": "terminator",
+        "shape": "end_event",
+        "label": "End"
+      }
+    ],
+    "edges": [
+      {
+        "source_": "start",
+        "source_type": "start",
+        "source_label": "Start",
+        "target": "documentation_work",
+        "target_type": "process",
+        "target_label": "Documentation Work",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "documentation_work",
+        "source_type": "process",
+        "source_label": "Documentation Work",
+        "target": "print_cycle_count_sheets",
+        "target_type": "process",
+        "target_label": "Print cycle count sheets",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "print_cycle_count_sheets",
+        "source_type": "process",
+        "source_label": "Print cycle count sheets",
+        "target": "perform_physical_count_of_stock",
+        "target_type": "process",
+        "target_label": "Perform physical count of stock",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "perform_physical_count_of_stock",
+        "source_type": "process",
+        "source_label": "Perform physical count of stock",
+        "target": "enter_physical_counts",
+        "target_type": "process",
+        "target_label": "Enter physical counts",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "enter_physical_counts",
+        "source_type": "process",
+        "source_label": "Enter physical counts",
+        "target": "report_differences",
+        "target_type": "process",
+        "target_label": "Report differences",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "report_differences",
+        "source_type": "process",
+        "source_label": "Report differences",
+        "target": "recount_inventory",
+        "target_type": "decision",
+        "target_label": "Recount inventory?",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "recount_inventory",
+        "source_type": "decision",
+        "source_label": "Recount inventory?",
+        "target": "post_inventory_documents",
+        "target_type": "process",
+        "target_label": "Post inventory documents",
+        "type_of_edge": "solid",
+        "relationship_value": "No",
+        "relationship_type": "depends_on"
+      },
+      {
+        "source_": "recount_inventory",
+        "source_type": "decision",
+        "source_label": "Recount inventory?",
+        "target": "display_documents",
+        "target_type": "process",
+        "target_label": "Display documents",
+        "type_of_edge": "solid",
+        "relationship_value": "Yes",
+        "relationship_type": "depends_on"
+      },
+      {
+        "source_": "display_documents",
+        "source_type": "process",
+        "source_label": "Display documents",
+        "target": "perform_physical_count_of_stock_1",
+        "target_type": "process",
+        "target_label": "Perform physical count of stock",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "perform_physical_count_of_stock_1",
+        "source_type": "process",
+        "source_label": "Perform physical count of stock",
+        "target": "report_differences",
+        "target_type": "process",
+        "target_label": "Report differences",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "post_inventory_documents",
+        "source_type": "process",
+        "source_label": "Post inventory documents",
+        "target": "end",
+        "target_type": "terminator",
+        "target_label": "End",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      }
+    ]
+  }

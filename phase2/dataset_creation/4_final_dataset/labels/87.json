@@ -1,0 +1,187 @@
+{
+    "nodes": [
+        {
+            "id": "begin",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Begin"
+        },
+        {
+            "id": "edit_video",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Edit video"
+        },
+        {
+            "id": "smaller_than_2gb",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Smaller than 2GB?"
+        },
+        {
+            "id": "click_to_upload",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Click to upload"
+        },
+        {
+            "id": "have_account_already",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Have an account already?"
+        },
+        {
+            "id": "register",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Register"
+        },
+        {
+            "id": "login",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Login"
+        },
+        {
+            "id": "find_on_computer",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Find on computer"
+        },
+        {
+            "id": "add_description_and_tags",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Add description and tags"
+        },
+        {
+            "id": "stop",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Stop"
+        }
+    ],
+    "edges": [
+        {
+            "source": "begin",
+            "source_type": "start",
+            "source_label": "Begin",
+            "target": "edit_video",
+            "target_type": "process",
+            "target_label": "Edit video",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "edit_video",
+            "source_type": "process",
+            "source_label": "Edit video",
+            "target": "smaller_than_2gb",
+            "target_type": "decision",
+            "target_label": "Smaller than 2GB?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "smaller_than_2gb",
+            "source_type": "decision",
+            "source_label": "Smaller than 2GB?",
+            "target": "click_to_upload",
+            "target_type": "process",
+            "target_label": "Click to upload",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "smaller_than_2gb",
+            "source_type": "decision",
+            "source_label": "Smaller than 2GB?",
+            "target": "edit_video",
+            "target_type": "process",
+            "target_label": "Edit video",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "click_to_upload",
+            "source_type": "process",
+            "source_label": "Click to upload",
+            "target": "have_account_already",
+            "target_type": "decision",
+            "target_label": "Have an account already?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "have_account_already",
+            "source_type": "decision",
+            "source_label": "Have an account already?",
+            "target": "register",
+            "target_type": "process",
+            "target_label": "Register",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "have_account_already",
+            "source_type": "decision",
+            "source_label": "Have an account already?",
+            "target": "login",
+            "target_type": "process",
+            "target_label": "Login",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "register",
+            "source_type": "process",
+            "source_label": "Register",
+            "target": "login",
+            "target_type": "process",
+            "target_label": "Login",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "login",
+            "source_type": "process",
+            "source_label": "Login",
+            "target": "find_on_computer",
+            "target_type": "process",
+            "target_label": "Find on computer",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "find_on_computer",
+            "source_type": "process",
+            "source_label": "Find on computer",
+            "target": "add_description_and_tags",
+            "target_type": "process",
+            "target_label": "Add description and tags",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "add_description_and_tags",
+            "source_type": "process",
+            "source_label": "Add description and tags",
+            "target": "stop",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

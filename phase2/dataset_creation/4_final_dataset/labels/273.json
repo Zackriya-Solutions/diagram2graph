@@ -1,0 +1,125 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Movie"
+        },
+        {
+            "id": "2",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "has subtitles"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Ask someone"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Type"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Summarize based on selected algorithm"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Crate new algorithm"
+        },
+        {
+            "id": "7",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Generate the summarized video"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Movie",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "has subtitles",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "has subtitles",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Ask someone",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "has subtitles",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "Type",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Type",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Summarize based on selected algorithm",
+            "type_of_edge": "solid",
+            "relationship_value": "Single",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Type",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Crate new algorithm",
+            "type_of_edge": "solid",
+            "relationship_value": "Combined",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "process",
+            "source_label": "Summarize based on selected algorithm",
+            "target": "7",
+            "target_type": "terminator",
+            "target_label": "Generate the summarized video",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Crate new algorithm",
+            "target": "7",
+            "target_type": "terminator",
+            "target_label": "Generate the summarized video",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

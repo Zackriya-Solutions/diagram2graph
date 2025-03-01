@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Begin"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Pre-configuration"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Input"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Input Signal Analysis"
+        },
+        {
+            "id": "5",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Input Signal Analysis Finished?"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Output Signal Analysis"
+        },
+        {
+            "id": "7",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Output Signal Analysis Finished?"
+        },
+        {
+            "id": "8",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Update"
+        },
+        {
+            "id": "9",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Back to work"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Begin",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Pre-configuration",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Pre-configuration",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Input",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Input",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Input Signal Analysis",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Input Signal Analysis",
+            "target": "5",
+            "target_type": "decision",
+            "target_label": "Input Signal Analysis Finished?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Input Signal Analysis Finished?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Output Signal Analysis",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Output Signal Analysis",
+            "target": "7",
+            "target_type": "decision",
+            "target_label": "Output Signal Analysis Finished?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Output Signal Analysis Finished?",
+            "target": "8",
+            "target_type": "process",
+            "target_label": "Update",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "8",
+            "source_type": "process",
+            "source_label": "Update",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Input",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "7",
+            "source_type": "decision",
+            "source_label": "Output Signal Analysis Finished?",
+            "target": "9",
+            "target_type": "process",
+            "target_label": "Back to work",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "9",
+            "source_type": "process",
+            "source_label": "Back to work",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Input",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

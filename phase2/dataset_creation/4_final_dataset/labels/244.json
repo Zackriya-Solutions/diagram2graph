@@ -1,0 +1,187 @@
+{
+    "nodes": [
+      {
+        "id": "start",
+        "type_of_node": "start",
+        "shape": "start_event",
+        "label": "Start"
+      },
+      {
+        "id": "username",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Username"
+      },
+      {
+        "id": "password",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Password"
+      },
+      {
+        "id": "credentials_check",
+        "type_of_node": "decision",
+        "shape": "gateway",
+        "label": "Username && Password correspond to the ones in database?"
+      },
+      {
+        "id": "enter_id_password",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Enter ID and password"
+      },
+      {
+        "id": "invalid_credentials",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "\"Invalid credentials\""
+      },
+      {
+        "id": "user_blocked_check",
+        "type_of_node": "decision",
+        "shape": "gateway",
+        "label": "Is User_ID blocked?"
+      },
+      {
+        "id": "forbidden",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "\"403 Forbidden\""
+      },
+      {
+        "id": "login_successfully",
+        "type_of_node": "process",
+        "shape": "task",
+        "label": "Login successfully"
+      },
+      {
+        "id": "end",
+        "type_of_node": "terminator",
+        "shape": "end_event",
+        "label": "End"
+      }
+    ],
+    "edges": [
+      {
+        "source_": "start",
+        "source_type": "start",
+        "source_label": "Start",
+        "target": "username",
+        "target_type": "process",
+        "target_label": "Username",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "username",
+        "source_type": "process",
+        "source_label": "Username",
+        "target": "password",
+        "target_type": "process",
+        "target_label": "Password",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "password",
+        "source_type": "process",
+        "source_label": "Password",
+        "target": "credentials_check",
+        "target_type": "decision",
+        "target_label": "Username && Password correspond to the ones in database?",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "credentials_check",
+        "source_type": "decision",
+        "source_label": "Username && Password correspond to the ones in database?",
+        "target": "enter_id_password",
+        "target_type": "process",
+        "target_label": "Enter ID and password",
+        "type_of_edge": "solid",
+        "relationship_value": "Yes",
+        "relationship_type": "depends_on"
+      },
+      {
+        "source_": "credentials_check",
+        "source_type": "decision",
+        "source_label": "Username && Password correspond to the ones in database?",
+        "target": "invalid_credentials",
+        "target_type": "process",
+        "target_label": "\"Invalid credentials\"",
+        "type_of_edge": "solid",
+        "relationship_value": "No",
+        "relationship_type": "depends_on"
+      },
+      {
+        "source_": "invalid_credentials",
+        "source_type": "process",
+        "source_label": "\"Invalid credentials\"",
+        "target": "username",
+        "target_type": "process",
+        "target_label": "Username",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "enter_id_password",
+        "source_type": "process",
+        "source_label": "Enter ID and password",
+        "target": "user_blocked_check",
+        "target_type": "decision",
+        "target_label": "Is User_ID blocked?",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "user_blocked_check",
+        "source_type": "decision",
+        "source_label": "Is User_ID blocked?",
+        "target": "forbidden",
+        "target_type": "process",
+        "target_label": "\"403 Forbidden\"",
+        "type_of_edge": "solid",
+        "relationship_value": "Yes",
+        "relationship_type": "depends_on"
+      },
+      {
+        "source_": "user_blocked_check",
+        "source_type": "decision",
+        "source_label": "Is User_ID blocked?",
+        "target": "login_successfully",
+        "target_type": "process",
+        "target_label": "Login successfully",
+        "type_of_edge": "solid",
+        "relationship_value": "No",
+        "relationship_type": "depends_on"
+      },
+      {
+        "source_": "forbidden",
+        "source_type": "process",
+        "source_label": "\"403 Forbidden\"",
+        "target": "username",
+        "target_type": "process",
+        "target_label": "Username",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      },
+      {
+        "source_": "login_successfully",
+        "source_type": "process",
+        "source_label": "Login successfully",
+        "target": "end",
+        "target_type": "terminator",
+        "target_label": "End",
+        "type_of_edge": "solid",
+        "relationship_value": "",
+        "relationship_type": "follows"
+      }
+    ]
+  }

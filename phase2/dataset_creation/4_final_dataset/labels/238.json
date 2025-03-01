@@ -1,0 +1,221 @@
+{
+    "nodes": [
+        {
+            "id": "start",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "login",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Login"
+        },
+        {
+            "id": "verified",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Verified?"
+        },
+        {
+            "id": "dashboard",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Dashboard"
+        },
+        {
+            "id": "click_report_incident",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Click on the report incident link"
+        },
+        {
+            "id": "fill_form",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Fill the form"
+        },
+        {
+            "id": "validation_module",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Validation Module"
+        },
+        {
+            "id": "need",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Need?"
+        },
+        {
+            "id": "submit",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Submit"
+        },
+        {
+            "id": "update_form",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Update form"
+        },
+        {
+            "id": "view_comments",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "View comments on the post"
+        },
+        {
+            "id": "stop",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Stop"
+        }
+    ],
+    "edges": [
+        {
+            "source": "start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "login",
+            "target_type": "process",
+            "target_label": "Login",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "login",
+            "source_type": "process",
+            "source_label": "Login",
+            "target": "verified",
+            "target_type": "decision",
+            "target_label": "Verified?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "verified",
+            "source_type": "decision",
+            "source_label": "Verified?",
+            "target": "dashboard",
+            "target_type": "process",
+            "target_label": "Dashboard",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "verified",
+            "source_type": "decision",
+            "source_label": "Verified?",
+            "target": "login",
+            "target_type": "process",
+            "target_label": "Login",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "dashboard",
+            "source_type": "process",
+            "source_label": "Dashboard",
+            "target": "click_report_incident",
+            "target_type": "process",
+            "target_label": "Click on the report incident link",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "click_report_incident",
+            "source_type": "process",
+            "source_label": "Click on the report incident link",
+            "target": "fill_form",
+            "target_type": "process",
+            "target_label": "Fill the form",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "fill_form",
+            "source_type": "process",
+            "source_label": "Fill the form",
+            "target": "validation_module",
+            "target_type": "process",
+            "target_label": "Validation Module",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "validation_module",
+            "source_type": "process",
+            "source_label": "Validation Module",
+            "target": "need",
+            "target_type": "decision",
+            "target_label": "Need?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "need",
+            "source_type": "decision",
+            "source_label": "Need?",
+            "target": "view_comments",
+            "target_type": "process",
+            "target_label": "View comments on the post",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "need",
+            "source_type": "decision",
+            "source_label": "Need?",
+            "target": "update_form",
+            "target_type": "process",
+            "target_label": "Update form",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "update_form",
+            "source_type": "process",
+            "source_label": "Update form",
+            "target": "submit",
+            "target_type": "process",
+            "target_label": "Submit",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "submit",
+            "source_type": "process",
+            "source_label": "Submit",
+            "target": "validation_module",
+            "target_type": "process",
+            "target_label": "Validation Module",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "view_comments",
+            "source_type": "process",
+            "source_label": "View comments on the post",
+            "target": "stop",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

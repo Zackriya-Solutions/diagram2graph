@@ -1,0 +1,102 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Topic assigned"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Discuss"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Draft review"
+        },
+        {
+            "id": "5",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Finish"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Topic assigned",
+            "type_of_edge": "solid",
+            "relationship_value": "Brainstorm",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Topic assigned",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Discuss",
+            "type_of_edge": "solid",
+            "relationship_value": "Outline",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "Discuss",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Topic assigned",
+            "type_of_edge": "solid",
+            "relationship_value": "Return",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "Discuss",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "Draft review",
+            "type_of_edge": "solid",
+            "relationship_value": "Draft",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Draft review",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "Discuss",
+            "type_of_edge": "solid",
+            "relationship_value": "changes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Draft review",
+            "target": "5",
+            "target_type": "terminator",
+            "target_label": "Finish",
+            "type_of_edge": "solid",
+            "relationship_value": "Approved",
+            "relationship_type": "follows"
+        }
+    ]
+}

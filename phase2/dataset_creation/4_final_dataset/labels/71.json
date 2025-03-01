@@ -1,0 +1,198 @@
+{
+    "nodes": [
+        {
+            "id": "start",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "read_values",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Read Values"
+        },
+        {
+            "id": "new_trials_available",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "new trials available?"
+        },
+        {
+            "id": "read_new_trial",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "read new trial"
+        },
+        {
+            "id": "average_available",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "average avaible for condition?"
+        },
+        {
+            "id": "initialize",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Initialize"
+        },
+        {
+            "id": "add_data_to_cumulative_sum",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "add data to cumulative sum"
+        },
+        {
+            "id": "compute_t_value_and_plot",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "compute t-value and plot"
+        },
+        {
+            "id": "continue",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "continue?"
+        },
+        {
+            "id": "stop",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Stop"
+        }
+    ],
+    "edges": [
+        {
+            "source": "start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "read_values",
+            "target_type": "process",
+            "target_label": "Read Values",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "read_values",
+            "source_type": "process",
+            "source_label": "Read Values",
+            "target": "new_trials_available",
+            "target_type": "decision",
+            "target_label": "new trials available?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "new_trials_available",
+            "source_type": "decision",
+            "source_label": "new trials available?",
+            "target": "read_new_trial",
+            "target_type": "process",
+            "target_label": "read new trial",
+            "type_of_edge": "solid",
+            "relationship_value": "yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "new_trials_available",
+            "source_type": "decision",
+            "source_label": "new trials available?",
+            "target": "read_values",
+            "target_type": "process",
+            "target_label": "Read Values",
+            "type_of_edge": "solid",
+            "relationship_value": "no",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "read_new_trial",
+            "source_type": "process",
+            "source_label": "read new trial",
+            "target": "average_available",
+            "target_type": "decision",
+            "target_label": "average available for condition?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "average_available",
+            "source_type": "decision",
+            "source_label": "average available for condition?",
+            "target": "initialize",
+            "target_type": "process",
+            "target_label": "Initialize",
+            "type_of_edge": "solid",
+            "relationship_value": "no",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "average_available",
+            "source_type": "decision",
+            "source_label": "average available for condition?",
+            "target": "add_data_to_cumulative_sum",
+            "target_type": "process",
+            "target_label": "add data to cumulative sum",
+            "type_of_edge": "solid",
+            "relationship_value": "yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "initialize",
+            "source_type": "process",
+            "source_label": "Initialize",
+            "target": "add_data_to_cumulative_sum",
+            "target_type": "process",
+            "target_label": "add data to cumulative sum",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "add_data_to_cumulative_sum",
+            "source_type": "process",
+            "source_label": "add data to cumulative sum",
+            "target": "compute_t_value_and_plot",
+            "target_type": "process",
+            "target_label": "compute t-value and plot",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "compute_t_value_and_plot",
+            "source_type": "process",
+            "source_label": "compute t-value and plot",
+            "target": "continue",
+            "target_type": "decision",
+            "target_label": "continue?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "continue",
+            "source_type": "decision",
+            "source_label": "continue?",
+            "target": "read_values",
+            "target_type": "process",
+            "target_label": "Read Values",
+            "type_of_edge": "solid",
+            "relationship_value": "yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source": "continue",
+            "source_type": "decision",
+            "source_label": "continue?",
+            "target": "stop",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "no",
+            "relationship_type": "depends_on"
+        }
+    ]
+}

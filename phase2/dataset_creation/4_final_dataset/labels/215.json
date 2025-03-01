@@ -1,0 +1,125 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "identity authentication"
+        },
+        {
+            "id": "3",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "identity verification"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Try Again"
+        },
+        {
+            "id": "5",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Profile"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "User"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "identity management"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "identity authentication",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "identity authentication",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "identity verification",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "identity verification",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Try Again",
+            "type_of_edge": "solid",
+            "relationship_value": "N",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Try Again",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "identity verification",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "identity verification",
+            "target": "5",
+            "target_type": "decision",
+            "target_label": "Profile",
+            "type_of_edge": "solid",
+            "relationship_value": "Y",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Profile",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "User",
+            "type_of_edge": "solid",
+            "relationship_value": "N",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Profile",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "identity management",
+            "type_of_edge": "solid",
+            "relationship_value": "Y",
+            "relationship_type": "branches"
+        }
+    ]
+}
