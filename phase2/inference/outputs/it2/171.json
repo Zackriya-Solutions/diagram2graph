@@ -1,0 +1,136 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Are you happy?"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Make others happy"
+        },
+        {
+            "id": "4",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Stop"
+        },
+        {
+            "id": "5",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Want to be happy?"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Ask someone"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "all over"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Are you happy?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Are you happy?",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Make others happy",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Are you happy?",
+            "target": "4",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Make others happy",
+            "target": "4",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "terminator",
+            "source_label": "Stop",
+            "target": "1",
+            "target_type": "start",
+            "target_label": "Start",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Want to be happy?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "Ask someone",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Want to be happy?",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "all over",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "Ask someone",
+            "target": "4",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

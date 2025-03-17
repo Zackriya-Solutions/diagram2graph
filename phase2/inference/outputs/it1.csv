@@ -1,0 +1,21 @@
+image_name, inference_time, size, norm_score, score,remarks
+914,56.38995043199975,"(565, 1046)",0.01818181818181818,44, Two edges got wrong
+37,46.78673795500072,"(228, 225)",0.26636009904492397,753, missed two nodes; got too much wrong in edges
+113,72.12735055200028,"(817, 1022)",0.22325581395348837,672, missed one node; rel_type not pressent;bypassed a node in rel;too much mistake
+813,30.447168395000517,"(217, 437)",0.020316027088036117,27, No mistake found
+332,31.38741388499966,"(143, 225)",0.0,0, The structure is repetitive in data; easy for the model
+171,54.2376458839999,"(575, 523)",0.08097165991902834,200,missed a node in edges;a critical error denoting end->start
+76,43.850177244000406,"(667, 603)",0.13289962825278812,286,missed a edge and some errors
+49,32.65574653600015,"(193, 358)",0.0,0, repetitive structure in dataset
+45,41.60592527999961,"(396, 434)",0.029157667386609073,54, No mistake found
+701,32.44812852399991,"(270, 392)",0.17424242424242425,253,missed a correct node; added backward node as follows(mistake)
+728,39.84751184700053,"(513, 655)",0.01549053356282272,27, No mistake found
+259,62.529237040000226,"(649, 1280)",0.016070124178232285,44, Problem with branching edges
+39,23.70010967000053,"(300, 225)",0.31011826544021026,472, Not complete; but adjustable
+634,66.82989217400063,"(471, 644)",0.12295839753466872,399, Node label mistaken; bypassed a node to end; backward edge as follows
+418,51.33779902400056,"(1066, 426)",0.07308377896613191,164, backward edge as follows; a edge mistaken
+345,46.40504477800005,"(146, 225)",0.029440628066732092,60, branching got wrong; others are good
+930,49.057200291999834,"(644, 509)",0.1287032540067994,265, branching got wrong; backward edge; stop->start
+563,42.35552245300005,"(291, 800)",0.010730710270822688,21, No mistake found
+937, 85.1384,"(596, 1054)",0.26079593564775616,924, Not completed; so getting Unterminated string starting at
+652,80.8817, "(942, 472)", 0.3358613217768147, 1240,Not completed

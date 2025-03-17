@@ -1,0 +1,80 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Input"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "C=5/9*(F-32)"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Display"
+        },
+        {
+            "id": "5",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Input",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Input",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "C=5/9*(F-32)",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "C=5/9*(F-32)",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Display",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Display",
+            "target": "5",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Read P,R,N"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Calculate I=(P*R*N)/100"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Print Output"
+        },
+        {
+            "id": "5",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Stop"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Read P,R,N",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Read P,R,N",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Calculate I=(P*R*N)/100",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "process",
+            "source_label": "Calculate I=(P*R*N)/100",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Print Output",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Print Output",
+            "target": "5",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}
