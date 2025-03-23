@@ -1,0 +1,114 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start",
+            "shape": "circle",
+            "label": "Start"
+        },
+        {
+            "id": "Log In",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Log In"
+        },
+        {
+            "id": "Change ID",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Change ID"
+        },
+        {
+            "id": "Change Password",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Change Password"
+        },
+        {
+            "id": "Forgot Password",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Forgot Password"
+        },
+        {
+            "id": "Successful",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Successful"
+        },
+        {
+            "id": "End",
+            "type_of_node": "terminator",
+            "shape": "octagon",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "Log In",
+            "target_type": "process",
+            "target_label": "Log In",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Log In",
+            "source_type": "process",
+            "source_label": "Log In",
+            "target": "Change ID",
+            "target_type": "process",
+            "target_label": "Change ID",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Change ID",
+            "source_type": "process",
+            "source_label": "Change ID",
+            "target": "Change Password",
+            "target_type": "process",
+            "target_label": "Change Password",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Change Password",
+            "source_type": "process",
+            "source_label": "Change Password",
+            "target": "Forgot Password",
+            "target_type": "process",
+            "target_label": "Forgot Password",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Forgot Password",
+            "source_type": "process",
+            "source_label": "Forgot Password",
+            "target": "Successful",
+            "target_type": "process",
+            "target_label": "Successful",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Successful",
+            "source_type": "process",
+            "source_label": "Successful",
+            "target": "End",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

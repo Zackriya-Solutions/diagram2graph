@@ -1,0 +1,131 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start_event",
+            "shape": "task",
+            "label": "Start"
+        },
+        {
+            "id": "Set up the training pattern",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Set up the training pattern"
+        },
+        {
+            "id": "Set up the structure",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Set up the structure"
+        },
+        {
+            "id": "Use the training pattern",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Use the training pattern"
+        },
+        {
+            "id": "Training finished?",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Training finished?"
+        },
+        {
+            "id": "Save the connection weights",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Save the connection weights"
+        },
+        {
+            "id": "Power quality Analysis",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Power quality Analysis"
+        },
+        {
+            "id": "End",
+            "type_of_node": "end_event",
+            "shape": "task",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start_event",
+            "source_label": "Start",
+            "target": "Set up the training pattern",
+            "target_type": "process",
+            "target_label": "Set up the training pattern",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Set up the training pattern",
+            "source_type": "process",
+            "source_label": "Set up the training pattern",
+            "target": "Set up the structure",
+            "target_type": "process",
+            "target_label": "Set up the structure",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Set up the structure",
+            "source_type": "process",
+            "source_label": "Set up the structure",
+            "target": "Use the training pattern",
+            "target_type": "process",
+            "target_label": "Use the training pattern",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Use the training pattern",
+            "source_type": "process",
+            "source_label": "Use the training pattern",
+            "target": "Training finished?",
+            "target_type": "decision",
+            "target_label": "Training finished?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Training finished?",
+            "source_type": "decision",
+            "source_label": "Training finished?",
+            "target": "Save the connection weights",
+            "target_type": "process",
+            "target_label": "Save the connection weights",
+            "type_of_edge": "solid",
+            "relationship_value": "yes",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Save the connection weights",
+            "source_type": "process",
+            "source_label": "Save the connection weights",
+            "target": "Power quality Analysis",
+            "target_type": "process",
+            "target_label": "Power quality Analysis",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Power quality Analysis",
+            "source_type": "process",
+            "source_label": "Power quality Analysis",
+            "target": "End",
+            "target_type": "end_event",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

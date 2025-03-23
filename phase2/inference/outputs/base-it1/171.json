@@ -1,0 +1,97 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "Are you happy?",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Are you happy?"
+        },
+        {
+            "id": "Ask someone",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Ask someone"
+        },
+        {
+            "id": "Make others happy",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Make others happy"
+        },
+        {
+            "id": "all over",
+            "type_of_node": "terminate",
+            "shape": "end_event",
+            "label": "all over"
+        },
+        {
+            "id": "Stop",
+            "type_of_node": "terminate",
+            "shape": "end_event",
+            "label": "Stop"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "Are you happy?",
+            "target_type": "decision",
+            "target_label": "Are you happy?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Are you happy?",
+            "source_type": "decision",
+            "source_label": "Are you happy?",
+            "target": "Make others happy",
+            "target_type": "process",
+            "target_label": "Make others happy",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Are you happy?",
+            "source_type": "decision",
+            "source_label": "Are you happy?",
+            "target": "Ask someone",
+            "target_type": "process",
+            "target_label": "Ask someone",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Ask someone",
+            "source_type": "process",
+            "source_label": "Ask someone",
+            "target": "Stop",
+            "target_type": "terminate",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Ask someone",
+            "source_type": "process",
+            "source_label": "Ask someone",
+            "target": "all over",
+            "target_type": "terminate",
+            "target_label": "all over",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "follows"
+        }
+    ]
+}

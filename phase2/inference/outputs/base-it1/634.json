@@ -1,0 +1,148 @@
+{
+    "nodes": [
+        {
+            "id": "Initial",
+            "type_of_node": "start_event",
+            "shape": "diamond",
+            "label": "Initial"
+        },
+        {
+            "id": "Case 1",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Case 1"
+        },
+        {
+            "id": "Statement 1",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Statement 1"
+        },
+        {
+            "id": "Case 2",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Case 2"
+        },
+        {
+            "id": "Statement 2",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Statement 2"
+        },
+        {
+            "id": "Case N",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Case N"
+        },
+        {
+            "id": "Statement N",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Statement N"
+        },
+        {
+            "id": "Default Statement",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Default Statement"
+        },
+        {
+            "id": "End",
+            "type_of_node": "end_event",
+            "shape": "oval",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Initial",
+            "source_type": "start_event",
+            "source_label": "Initial",
+            "target": "Case 1",
+            "target_type": "decision",
+            "target_label": "Case 1",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Case 1",
+            "source_type": "decision",
+            "source_label": "Case 1",
+            "target": "Statement 1",
+            "target_type": "process",
+            "target_label": "Statement 1",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Case 1",
+            "source_type": "decision",
+            "source_label": "Case 1",
+            "target": "Case 2",
+            "target_type": "decision",
+            "target_label": "Case 2",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Case 2",
+            "source_type": "decision",
+            "source_label": "Case 2",
+            "target": "Statement 2",
+            "target_type": "process",
+            "target_label": "Statement 2",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Case 2",
+            "source_type": "decision",
+            "source_label": "Case 2",
+            "target": "Case N",
+            "target_type": "decision",
+            "target_label": "Case N",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Case N",
+            "source_type": "decision",
+            "source_label": "Case N",
+            "target": "Statement N",
+            "target_type": "process",
+            "target_label": "Statement N",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Case N",
+            "source_type": "decision",
+            "source_label": "Case N",
+            "target": "Default Statement",
+            "target_type": "process",
+            "target_label": "Default Statement",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Default Statement",
+            "source_type": "process",
+            "source_label": "Default Statement",
+            "target": "End",
+            "target_type": "end_event",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

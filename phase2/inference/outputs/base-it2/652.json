@@ -1,0 +1,152 @@
+{
+  "nodes": [
+    {
+      "id": "Start",
+      "type_of_node": "start_event",
+      "shape": "task",
+      "label": "Start"
+    },
+    {
+      "id": "Documentation Work",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Documentation Work"
+    },
+    {
+      "id": "Print cycle count sheets",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Print cycle count sheets"
+    },
+    {
+      "id": "Perform physical count of stock",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Perform physical count of stock"
+    },
+    {
+      "id": "Enter physical counts",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Enter physical counts"
+    },
+    {
+      "id": "Report differences",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Report differences"
+    },
+    {
+      "id": "Recount inventory?",
+      "type_of_node": "decision",
+      "shape": "diamond",
+      "label": "Recount inventory?"
+    },
+    {
+      "id": "Post inventory documents",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Post inventory documents"
+    },
+    {
+      "id": "Display documents",
+      "type_of_node": "process",
+      "shape": "task",
+      "label": "Display documents"
+    },
+    {
+      "id": "End",
+      "type_of_node": "end_event",
+      "shape": "task",
+      "label": "End"
+    }
+  ],
+  "edges": [
+    {
+      "source_": "Start",
+      "source_type": "start_event",
+      "source_label": "Start",
+      "target": "Documentation Work",
+      "target_type": "process",
+      "target_label": "Documentation Work",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "Documentation Work",
+      "source_type": "process",
+      "source_label": "Documentation Work",
+      "target": "Print cycle count sheets",
+      "target_type": "process",
+      "target_label": "Print cycle count sheets",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "Print cycle count sheets",
+      "source_type": "process",
+      "source_label": "Print cycle count sheets",
+      "target": "Perform physical count of stock",
+      "target_type": "process",
+      "target_label": "Perform physical count of stock",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "Perform physical count of stock",
+      "source_type": "process",
+      "source_label": "Perform physical count of stock",
+      "target": "Enter physical counts",
+      "target_type": "process",
+      "target_label": "Enter physical counts",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "Enter physical counts",
+      "source_type": "process",
+      "source_label": "Enter physical counts",
+      "target": "Report differences",
+      "target_type": "process",
+      "target_label": "Report differences",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "Report differences",
+      "source_type": "process",
+      "source_label": "Report differences",
+      "target": "Recount inventory?",
+      "target_type": "decision",
+      "target_label": "Recount inventory?",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "Recount inventory?",
+      "source_type": "decision",
+      "source_label": "Recount inventory?",
+      "target": "Yes",
+      "target_type": "branch",
+      "target_label": "Yes",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "branches"
+    },
+    {
+      "source_": "Recount inventory?",
+      "source_type": "decision",
+      "source_label": "Recount inventory?",
+      "target": "No",
+      "target_type": "branch",
+      "target_label": "No",
+      "type_of": ""
+    }
+  ]
+}

@@ -1,78 +1,66 @@
 {
     "nodes": [
         {
-            "id": "1",
-            "type_of_node": "start",
-            "shape": "start_event",
+            "id": "START",
+            "type_of_node": "start_event",
+            "shape": "circle",
             "label": "START"
         },
         {
-            "id": "2",
+            "id": "Greet",
             "type_of_node": "process",
-            "shape": "task",
+            "shape": "rectangle",
             "label": "Greet"
         },
         {
-            "id": "3",
-            "type_of_node": "decision",
-            "shape": "gateway",
-            "label": "FAILURE"
-        },
-        {
-            "id": "4",
+            "id": "Enter_ID",
             "type_of_node": "process",
-            "shape": "task",
-            "label": "ACCEPT NO COMMANDS"
-        },
-        {
-            "id": "5",
-            "type_of_node": "process",
-            "shape": "task",
+            "shape": "rectangle",
             "label": "Enter ID"
         },
         {
-            "id": "6",
+            "id": "INPUT_DRIVER_INFORMATION",
             "type_of_node": "process",
-            "shape": "task",
+            "shape": "rectangle",
             "label": "INPUT DRIVER INFORMATION"
         },
         {
-            "id": "7",
+            "id": "Verify_finger_scan",
             "type_of_node": "process",
-            "shape": "task",
+            "shape": "rectangle",
             "label": "Verify finger scan"
         },
         {
-            "id": "8",
+            "id": "SCAN_FINGER_AGAIN",
             "type_of_node": "process",
-            "shape": "task",
+            "shape": "rectangle",
             "label": "SCAN FINGER AGAIN"
         },
         {
-            "id": "9",
+            "id": "1ST_AND_2ND_SCAN_MATCH?",
             "type_of_node": "decision",
-            "shape": "gateway",
+            "shape": "diamond",
             "label": "1ST AND 2ND SCAN MATCH?"
         },
         {
-            "id": "10",
+            "id": "Login",
             "type_of_node": "process",
-            "shape": "task",
+            "shape": "rectangle",
             "label": "Login"
         },
         {
-            "id": "11",
-            "type_of_node": "terminator",
-            "shape": "end_event",
+            "id": "STOP",
+            "type_of_node": "end_event",
+            "shape": "circle",
             "label": "STOP"
         }
     ],
     "edges": [
         {
-            "source": "1",
-            "source_type": "start",
+            "source_": "START",
+            "source_type": "start_event",
             "source_label": "START",
-            "target": "2",
+            "target": "Greet",
             "target_type": "process",
             "target_label": "Greet",
             "type_of_edge": "solid",
@@ -80,43 +68,21 @@
             "relationship_type": "follows"
         },
         {
-            "source": "2",
+            "source_": "Greet",
             "source_type": "process",
             "source_label": "Greet",
-            "target": "3",
-            "target_type": "decision",
-            "target_label": "FAILURE",
-            "type_of_edge": "solid",
-            "relationship_value": "",
-            "relationship_type": "follows"
-        },
-        {
-            "source": "3",
-            "source_type": "decision",
-            "source_label": "FAILURE",
-            "target": "4",
+            "target": "Enter_ID",
             "target_type": "process",
-            "target_label": "ACCEPT NO COMMANDS",
-            "type_of_edge": "solid",
-            "relationship_value": "",
-            "relationship_type": "branches"
-        },
-        {
-            "source": "4",
-            "source_type": "process",
-            "source_label": "ACCEPT NO COMMANDS",
-            "target": "1",
-            "target_type": "start",
-            "target_label": "START",
+            "target_label": "Enter ID",
             "type_of_edge": "solid",
             "relationship_value": "",
             "relationship_type": "follows"
         },
         {
-            "source": "5",
+            "source_": "Enter_ID",
             "source_type": "process",
             "source_label": "Enter ID",
-            "target": "6",
+            "target": "INPUT_DRIVER_INFORMATION",
             "target_type": "process",
             "target_label": "INPUT DRIVER INFORMATION",
             "type_of_edge": "solid",
@@ -124,10 +90,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "6",
+            "source_": "INPUT_DRIVER_INFORMATION",
             "source_type": "process",
             "source_label": "INPUT DRIVER INFORMATION",
-            "target": "7",
+            "target": "Verify_finger_scan",
             "target_type": "process",
             "target_label": "Verify finger scan",
             "type_of_edge": "solid",
@@ -135,10 +101,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "7",
+            "source_": "Verify_finger_scan",
             "source_type": "process",
             "source_label": "Verify finger scan",
-            "target": "8",
+            "target": "SCAN_FINGER_AGAIN",
             "target_type": "process",
             "target_label": "SCAN FINGER AGAIN",
             "type_of_edge": "solid",
@@ -146,10 +112,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "8",
+            "source_": "SCAN_FINGER_AGAIN",
             "source_type": "process",
             "source_label": "SCAN FINGER AGAIN",
-            "target": "9",
+            "target": "1ST_AND_2ND_SCAN_MATCH?",
             "target_type": "decision",
             "target_label": "1ST AND 2ND SCAN MATCH?",
             "type_of_edge": "solid",
@@ -157,35 +123,26 @@
             "relationship_type": "follows"
         },
         {
-            "source": "9",
+            "source_": "1ST_AND_2ND_SCAN_MATCH?",
             "source_type": "decision",
             "source_label": "1ST AND 2ND SCAN MATCH?",
-            "target": "10",
+            "target": "Login",
             "target_type": "process",
             "target_label": "Login",
-            "type_of_edge": "solid",
-            "relationship_value": "YES",
-            "relationship_type": "branches"
-        },
-        {
-            "source": "10",
-            "source_type": "process",
-            "source_label": "Login",
-            "target": "11",
-            "target_type": "terminator",
-            "target_label": "STOP",
             "type_of_edge": "solid",
             "relationship_value": "",
             "relationship_type": "follows"
         },
         {
-            "source": "9",
-            "source_type": "decision",
-            "source_label": "1ST AND 2ND SCAN MATCH?",
-            "target": "8",
-            "target_type": "process",
-            "target_label": "SCAN FINGER AGAIN",
-            "type": ""
+            "source_": "Login",
+            "source_type": "process",
+            "source_label": "Login",
+            "target": "STOP",
+            "target_type": "end_event",
+            "target_label": "STOP",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follow"
         }
     ]
 }

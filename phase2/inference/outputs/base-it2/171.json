@@ -1,0 +1,103 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "Are you happy?",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Are you happy?"
+        },
+        {
+            "id": "Make others happy",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Make others happy"
+        },
+        {
+            "id": "Stop",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Stop"
+        },
+        {
+            "id": "Want to be happy?",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Want to be happy?"
+        },
+        {
+            "id": "Ask someone",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Ask someone"
+        },
+        {
+            "id": "all over",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "all over"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "Are you happy?",
+            "target_type": "decision",
+            "target_label": "Are you happy?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Are you happy?",
+            "source_type": "decision",
+            "source_label": "Are you happy?",
+            "target": "Make others happy",
+            "target_type": "process",
+            "target_label": "Make others happy",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Are you happy?",
+            "source_type": "decision",
+            "source_label": "Are you happy?",
+            "target": "Stop",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Want to be happy?",
+            "source_type": "decision",
+            "source_label": "Want to be happy?",
+            "target": "Ask someone",
+            "target_type": "process",
+            "target_label": "Ask someone",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Want to be happy?",
+            "source_type": "decision",
+            "source_label": "Want to be happy?",
+            "target": "all over",
+            "target_type": "process",
+            "target_label": "all over",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

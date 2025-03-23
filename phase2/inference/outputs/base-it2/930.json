@@ -1,0 +1,97 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start",
+            "shape": "ellipse",
+            "label": "Start"
+        },
+        {
+            "id": "c=1",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "c = 1"
+        },
+        {
+            "id": "is c < 6",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "is c < 6"
+        },
+        {
+            "id": "Stop",
+            "type_of_node": "terminator",
+            "shape": "ellipse",
+            "label": "Stop"
+        },
+        {
+            "id": "Print 3*c",
+            "type_of_node": "process",
+            "shape": "parallelogram",
+            "label": "Print 3*c"
+        },
+        {
+            "id": "c=c+1",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "c = c + 1"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "c=1",
+            "target_type": "process",
+            "target_label": "c = 1",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "c=1",
+            "source_type": "process",
+            "source_label": "c = 1",
+            "target": "is c < 6",
+            "target_type": "decision",
+            "target_label": "is c < 6",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "is c < 6",
+            "source_type": "decision",
+            "source_label": "is c < 6",
+            "target": "Stop",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "is c < 6",
+            "source_type": "decision",
+            "source_label": "is c < 6",
+            "target": "Print 3*c",
+            "target_type": "process",
+            "target_label": "Print 3*c",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Print 3*c",
+            "source_type": "process",
+            "source_label": "Print 3*c",
+            "target": "c=c+1",
+            "target_type": "process",
+            "target_label": "c = c + 1",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

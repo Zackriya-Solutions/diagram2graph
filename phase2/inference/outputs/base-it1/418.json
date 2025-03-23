@@ -1,0 +1,119 @@
+{
+    "nodes": [
+        {
+            "id": "Begin",
+            "type_of_node": "start_event",
+            "shape": "circle",
+            "label": "Begin"
+        },
+        {
+            "id": "Alarm Rings",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Alarm Rings"
+        },
+        {
+            "id": "Get Up",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Get Up"
+        },
+        {
+            "id": "Hit SNOOZE",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Hit SNOOZE"
+        },
+        {
+            "id": "Ignore",
+            "type_of_node": "gateway",
+            "shape": "diamond",
+            "label": "Ignore"
+        },
+        {
+            "id": "End",
+            "type_of_node": "end_event",
+            "shape": "circle",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Begin",
+            "source_type": "start_event",
+            "source_label": "Begin",
+            "target": "Alarm Rings",
+            "target_type": "process",
+            "target_label": "Alarm Rings",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Alarm Rings",
+            "source_type": "process",
+            "source_label": "Alarm Rings",
+            "target": "Ignore",
+            "target_type": "gateway",
+            "target_label": "Ignore",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Alarm Rings",
+            "source_type": "process",
+            "source_label": "Alarm Rings",
+            "target": "Hit SNOOZE",
+            "target_type": "process",
+            "target_label": "Hit SNOOZE",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Hit SNOOZE",
+            "source_type": "process",
+            "source_label": "Hit SNOOZE",
+            "target": "Ignore",
+            "target_type": "gateway",
+            "target_label": "Ignore",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Ignore",
+            "source_type": "gateway",
+            "source_label": "Ignore",
+            "target": "Alarm Rings",
+            "target_type": "process",
+            "target_label": "Alarm Rings",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Alarm Rings",
+            "source_type": "process",
+            "source_label": "Alarm Rings",
+            "target": "Get Up",
+            "target_type": "process",
+            "target_label": "Get Up",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Get Up",
+            "source_type": "process",
+            "source_label": "Get Up",
+            "target": "End",
+            "target_type": "end_event",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

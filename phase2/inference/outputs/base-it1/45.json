@@ -1,0 +1,97 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start",
+            "shape": "ellipse",
+            "label": "Start"
+        },
+        {
+            "id": "Process1",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Process 1"
+        },
+        {
+            "id": "Decision",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Decision"
+        },
+        {
+            "id": "Process2",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Process 2"
+        },
+        {
+            "id": "Process3",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Process 3"
+        },
+        {
+            "id": "Stop",
+            "type_of_node": "terminator",
+            "shape": "ellipse",
+            "label": "Stop"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "Process1",
+            "target_type": "process",
+            "target_label": "Process 1",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Process1",
+            "source_type": "process",
+            "source_label": "Process 1",
+            "target": "Decision",
+            "target_type": "decision",
+            "target_label": "Decision",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Decision",
+            "source_type": "decision",
+            "source_label": "Decision",
+            "target": "Process2",
+            "target_type": "process",
+            "target_label": "Process 2",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source_": "Decision",
+            "source_type": "decision",
+            "source_label": "Decision",
+            "target": "Process3",
+            "target_type": "process",
+            "target_label": "Process 3",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Process3",
+            "source_type": "process",
+            "source_label": "Process 3",
+            "target": "Stop",
+            "target_type": "terminator",
+            "target_label": "Stop",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "nodes": [
+        {
+            "id": "Log In",
+            "type_of_node": "start_event",
+            "shape": "task",
+            "label": "Log In"
+        },
+        {
+            "id": "Logged in",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Logged in"
+        },
+        {
+            "id": "Home",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Home"
+        },
+        {
+            "id": "OpenID",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "OpenID"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Log In",
+            "source_type": "start_event",
+            "source_label": "Log In",
+            "target": "Logged in",
+            "target_type": "decision",
+            "target_label": "Logged in",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Logged in",
+            "source_type": "decision",
+            "source_label": "Logged in",
+            "target": "Home",
+            "target_type": "process",
+            "target_label": "Home",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Logged in",
+            "source_type": "decision",
+            "source_label": "Logged in",
+            "target": "OpenID",
+            "target_type": "process",
+            "target_label": "OpenID",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "follows"
+        }
+    ]
+}

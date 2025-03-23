@@ -1,0 +1,80 @@
+{
+    "nodes": [
+        {
+            "id": "Topic",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Topic"
+        },
+        {
+            "id": "Power signal",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Power signal"
+        },
+        {
+            "id": "Processor",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Processor"
+        },
+        {
+            "id": "Output",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Output"
+        },
+        {
+            "id": "End",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Topic",
+            "source_type": "start",
+            "source_label": "Topic",
+            "target": "Power signal",
+            "target_type": "process",
+            "target_label": "Power signal",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Power signal",
+            "source_type": "process",
+            "source_label": "Power signal",
+            "target": "Processor",
+            "target_type": "process",
+            "target_label": "Processor",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Processor",
+            "source_type": "process",
+            "source_label": "Processor",
+            "target": "Output",
+            "target_type": "process",
+            "target_label": "Output",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Output",
+            "source_type": "process",
+            "source_label": "Output",
+            "target": "End",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

@@ -1,0 +1,153 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Do you have time to flee?"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Run quickly"
+        },
+        {
+            "id": "3",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Are you wearing sun glasses?"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Don't run"
+        },
+        {
+            "id": "5",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Could you pretend to get a call?"
+        },
+        {
+            "id": "6",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "No problem"
+        },
+        {
+            "id": "7",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Yeah! No need to say hi."
+        },
+        {
+            "id": "8",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "Finish"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "decision",
+            "source_label": "Do you have time to flee?",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Run quickly",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "2",
+            "source_type": "process",
+            "source_label": "Run quickly",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Yeah! No need to say hi.",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "1",
+            "source_type": "decision",
+            "source_label": "Do you have time to flee?",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "Are you wearing sun glasses?",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "Are you wearing sun glasses?",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Don't run",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "process",
+            "source_label": "Don't run",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Yeah! No need to say hi.",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "3",
+            "source_type": "decision",
+            "source_label": "Are you wearing sun glasses?",
+            "target": "5",
+            "target_type": "decision",
+            "target_label": "Could you pretend to get a call?",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Could you pretend to get a call?",
+            "target": "6",
+            "target_type": "process",
+            "target_label": "No problem",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "process",
+            "source_label": "No problem",
+            "target": "7",
+            "target_type": "process",
+            "target_label": "Yeah! No need to say hi.",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "5",
+            "source_type": "decision",
+            "source_label": "Could you pretend to get a call?",
+            "target": "8",
+            "target_type": "terminator",
+            "target_label": "Finish",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "branches"
+        }
+    ]
+}

@@ -1,0 +1,119 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "START"
+        },
+        {
+            "id": "2",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Is it necessary?"
+        },
+        {
+            "id": "3",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Don't do it!"
+        },
+        {
+            "id": "4",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Will it fail?"
+        },
+        {
+            "id": "5",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Do it!"
+        },
+        {
+            "id": "6",
+            "type_of_node": "decision",
+            "shape": "gateway",
+            "label": "Knowledge"
+        }
+    ],
+    "edges": [
+        {
+            "source": "1",
+            "source_type": "start",
+            "source_label": "START",
+            "target": "2",
+            "target_type": "decision",
+            "target_label": "Is it necessary?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Is it necessary?",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Don't do it!",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "2",
+            "source_type": "decision",
+            "source_label": "Is it necessary?",
+            "target": "4",
+            "target_type": "decision",
+            "target_label": "Will it fail?",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Will it fail?",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Do it!",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "4",
+            "source_type": "decision",
+            "source_label": "Will it fail?",
+            "target": "6",
+            "target_type": "decision",
+            "target_label": "Knowledge",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Knowledge",
+            "target": "3",
+            "target_type": "process",
+            "target_label": "Don't do it!",
+            "type_of_edge": "solid",
+            "relationship_value": "NO",
+            "relationship_type": "branches"
+        },
+        {
+            "source": "6",
+            "source_type": "decision",
+            "source_label": "Knowledge",
+            "target": "5",
+            "target_type": "process",
+            "target_label": "Do it!",
+            "type_of_edge": "solid",
+            "relationship_value": "YES",
+            "relationship_type": "branches"
+        }
+    ]
+}

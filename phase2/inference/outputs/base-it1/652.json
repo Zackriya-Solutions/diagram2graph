@@ -1,78 +1,72 @@
 {
     "nodes": [
         {
-            "id": "1",
-            "type_of_node": "start",
-            "shape": "start_event",
+            "id": "Start",
+            "type_of_node": "start_event",
+            "shape": "task",
             "label": "Start"
         },
         {
-            "id": "2",
+            "id": "Documentation Work",
             "type_of_node": "process",
             "shape": "task",
             "label": "Documentation Work"
         },
         {
-            "id": "3",
+            "id": "Print cycle count sheets",
             "type_of_node": "process",
             "shape": "task",
             "label": "Print cycle count sheets"
         },
         {
-            "id": "4",
+            "id": "Perform physical count of stock",
             "type_of_node": "process",
             "shape": "task",
             "label": "Perform physical count of stock"
         },
         {
-            "id": "5",
+            "id": "Enter physical counts",
             "type_of_node": "process",
             "shape": "task",
             "label": "Enter physical counts"
         },
         {
-            "id": "6",
+            "id": "Report differences",
             "type_of_node": "process",
             "shape": "task",
             "label": "Report differences"
         },
         {
-            "id": "7",
+            "id": "Recount inventory?",
             "type_of_node": "decision",
-            "shape": "gateway",
+            "shape": "diamond",
             "label": "Recount inventory?"
         },
         {
-            "id": "8",
+            "id": "Post inventory documents",
             "type_of_node": "process",
             "shape": "task",
             "label": "Post inventory documents"
         },
         {
-            "id": "9",
-            "type_of_node": "terminator",
-            "shape": "end_event",
-            "label": "End"
-        },
-        {
-            "id": "10",
+            "id": "Display documents",
             "type_of_node": "process",
             "shape": "task",
             "label": "Display documents"
         },
         {
-            "id": "11",
-            "type_of_node": "process",
+            "id": "End",
+            "type_of_node": "end_event",
             "shape": "task",
-            "label": "Perform physical count of stock"
+            "label": "End"
         }
     ],
     "edges": [
         {
-            "source": "1",
-            "source_type": "start",
+            "source_": "Start",
+            "source_type": "start_event",
             "source_label": "Start",
-            "target": "2",
+            "target": "Documentation Work",
             "target_type": "process",
             "target_label": "Documentation Work",
             "type_of_edge": "solid",
@@ -80,10 +74,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "2",
+            "source_": "Documentation Work",
             "source_type": "process",
             "source_label": "Documentation Work",
-            "target": "3",
+            "target": "Print cycle count sheets",
             "target_type": "process",
             "target_label": "Print cycle count sheets",
             "type_of_edge": "solid",
@@ -91,10 +85,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "3",
+            "source_": "Print cycle count sheets",
             "source_type": "process",
             "source_label": "Print cycle count sheets",
-            "target": "4",
+            "target": "Perform physical count of stock",
             "target_type": "process",
             "target_label": "Perform physical count of stock",
             "type_of_edge": "solid",
@@ -102,10 +96,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "4",
+            "source_": "Perform physical count of stock",
             "source_type": "process",
             "source_label": "Perform physical count of stock",
-            "target": "5",
+            "target": "Enter physical counts",
             "target_type": "process",
             "target_label": "Enter physical counts",
             "type_of_edge": "solid",
@@ -113,10 +107,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "5",
+            "source_": "Enter physical counts",
             "source_type": "process",
             "source_label": "Enter physical counts",
-            "target": "6",
+            "target": "Report differences",
             "target_type": "process",
             "target_label": "Report differences",
             "type_of_edge": "solid",
@@ -124,10 +118,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "6",
+            "source_": "Report differences",
             "source_type": "process",
             "source_label": "Report differences",
-            "target": "7",
+            "target": "Recount inventory?",
             "target_type": "decision",
             "target_label": "Recount inventory?",
             "type_of_edge": "solid",
@@ -135,57 +129,24 @@
             "relationship_type": "follows"
         },
         {
-            "source": "7",
+            "source_": "Recount inventory?",
             "source_type": "decision",
             "source_label": "Recount inventory?",
-            "target": "8",
-            "target_type": "process",
-            "target_label": "Post inventory documents",
+            "target": "Yes",
+            "target_type": "branch",
+            "target_label": "Yes",
             "type_of_edge": "solid",
-            "relationship_value": "No",
+            "relationship_value": "",
             "relationship_type": "branches"
         },
         {
-            "source": "7",
+            "source_": "Recount inventory?",
             "source_type": "decision",
             "source_label": "Recount inventory?",
-            "target": "10",
-            "target_type": "process",
-            "target_label": "Display documents",
-            "type_of_edge": "solid",
-            "relationship_value": "Yes",
-            "relationship_type": "branches"
-        },
-        {
-            "source": "8",
-            "source_type": "process",
-            "source_label": "Post inventory documents",
-            "target": "9",
-            "target_type": "terminator",
-            "target_label": "End",
-            "type_of_edge": "solid",
-            "relationship_value": "",
-            "relationship_type": "follows"
-        },
-        {
-            "source": "10",
-            "source_type": "process",
-            "source_label": "Display documents",
-            "target": "11",
-            "target_type": "process",
-            "target_label": "Perform physical count of stock",
-            "type_of_edge": "solid",
-            "relationship_value": "",
-            "relationship_type": "follows"
-        },
-        {
-            "source": "11",
-            "source_type": "process",
-            "source_label": "Perform physical count of stock",
-            "target": "6",
-            "target_type": "process",
-            "target_label": "Report differences",
-            "type_of_edge": ""
+            "target": "No",
+            "target_type": "branch",
+            "target_label": "No",
+            "type_of": ""
         }
     ]
 }

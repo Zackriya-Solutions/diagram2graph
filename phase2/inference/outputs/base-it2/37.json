@@ -1,0 +1,125 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start",
+            "shape": "circle",
+            "label": "Start"
+        },
+        {
+            "id": "If Condition",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "If Condition"
+        },
+        {
+            "id": "Nested If Condition",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Nested If Condition"
+        },
+        {
+            "id": "If Body",
+            "type_of_node": "process",
+            "shape": "box",
+            "label": "If Body"
+        },
+        {
+            "id": "Pass",
+            "type_of_node": "process",
+            "shape": "box",
+            "label": "Pass"
+        },
+        {
+            "id": "Statement just below if",
+            "type_of_node": "process",
+            "shape": "box",
+            "label": "Statement just below if"
+        },
+        {
+            "id": "Exit",
+            "type_of_node": "terminator",
+            "shape": "oval",
+            "label": "Exit"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "If Condition",
+            "target_type": "decision",
+            "target_label": "If Condition",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "If Condition",
+            "source_type": "decision",
+            "source_label": "If Condition",
+            "target": "If Body",
+            "target_type": "process",
+            "target_label": "If Body",
+            "type_of_edge": "solid",
+            "relationship_value": "True",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "If Condition",
+            "source_type": "decision",
+            "source_label": "If Condition",
+            "target": "Pass",
+            "target_type": "process",
+            "target_label": "Pass",
+            "type_of_edge": "solid",
+            "relationship_value": "False",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Nested If Condition",
+            "source_type": "decision",
+            "source_label": "Nested If Condition",
+            "target": "Nested If Body",
+            "target_type": "process",
+            "target_label": "Nested If Body",
+            "type_of_edge": "solid",
+            "relationship_value": "True",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Nested If Condition",
+            "source_type": "decision",
+            "source_label": "Nested If Condition",
+            "target": "Pass",
+            "target_type": "process",
+            "target_label": "Pass",
+            "type_of_edge": "solid",
+            "relationship_value": "False",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "If Body",
+            "source_type": "process",
+            "source_label": "If Body",
+            "target": "Statement just below if",
+            "target_type": "process",
+            "target_label": "Statement just below if",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Statement just below if",
+            "source_type": "process",
+            "source_label": "Statement just below if",
+            "target": "Exit",
+            "target_type": "terminator",
+            "target_label": "Exit",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

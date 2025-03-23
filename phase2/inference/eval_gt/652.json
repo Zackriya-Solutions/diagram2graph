@@ -1,78 +1,78 @@
 {
     "nodes": [
         {
-            "id": "1",
+            "id": "start",
             "type_of_node": "start",
             "shape": "start_event",
             "label": "Start"
         },
         {
-            "id": "2",
+            "id": "documentation_work",
             "type_of_node": "process",
             "shape": "task",
             "label": "Documentation Work"
         },
         {
-            "id": "3",
+            "id": "print_cycle_count_sheets",
             "type_of_node": "process",
             "shape": "task",
             "label": "Print cycle count sheets"
         },
         {
-            "id": "4",
+            "id": "perform_physical_count_of_stock",
             "type_of_node": "process",
             "shape": "task",
             "label": "Perform physical count of stock"
         },
         {
-            "id": "5",
+            "id": "enter_physical_counts",
             "type_of_node": "process",
             "shape": "task",
             "label": "Enter physical counts"
         },
         {
-            "id": "6",
+            "id": "report_differences",
             "type_of_node": "process",
             "shape": "task",
             "label": "Report differences"
         },
         {
-            "id": "7",
+            "id": "recount_inventory",
             "type_of_node": "decision",
             "shape": "gateway",
             "label": "Recount inventory?"
         },
         {
-            "id": "8",
-            "type_of_node": "process",
-            "shape": "task",
-            "label": "Post inventory documents"
-        },
-        {
-            "id": "9",
-            "type_of_node": "terminator",
-            "shape": "end_event",
-            "label": "End"
-        },
-        {
-            "id": "10",
+            "id": "display_documents",
             "type_of_node": "process",
             "shape": "task",
             "label": "Display documents"
         },
         {
-            "id": "11",
+            "id": "perform_physical_count_of_stock_1",
             "type_of_node": "process",
             "shape": "task",
             "label": "Perform physical count of stock"
+        },
+        {
+            "id": "post_inventory_documents",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Post inventory documents"
+        },
+        {
+            "id": "end",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
         }
     ],
     "edges": [
         {
-            "source": "1",
+            "source_": "start",
             "source_type": "start",
             "source_label": "Start",
-            "target": "2",
+            "target": "documentation_work",
             "target_type": "process",
             "target_label": "Documentation Work",
             "type_of_edge": "solid",
@@ -80,10 +80,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "2",
+            "source_": "documentation_work",
             "source_type": "process",
             "source_label": "Documentation Work",
-            "target": "3",
+            "target": "print_cycle_count_sheets",
             "target_type": "process",
             "target_label": "Print cycle count sheets",
             "type_of_edge": "solid",
@@ -91,10 +91,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "3",
+            "source_": "print_cycle_count_sheets",
             "source_type": "process",
             "source_label": "Print cycle count sheets",
-            "target": "4",
+            "target": "perform_physical_count_of_stock",
             "target_type": "process",
             "target_label": "Perform physical count of stock",
             "type_of_edge": "solid",
@@ -102,10 +102,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "4",
+            "source_": "perform_physical_count_of_stock",
             "source_type": "process",
             "source_label": "Perform physical count of stock",
-            "target": "5",
+            "target": "enter_physical_counts",
             "target_type": "process",
             "target_label": "Enter physical counts",
             "type_of_edge": "solid",
@@ -113,10 +113,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "5",
+            "source_": "enter_physical_counts",
             "source_type": "process",
             "source_label": "Enter physical counts",
-            "target": "6",
+            "target": "report_differences",
             "target_type": "process",
             "target_label": "Report differences",
             "type_of_edge": "solid",
@@ -124,10 +124,10 @@
             "relationship_type": "follows"
         },
         {
-            "source": "6",
+            "source_": "report_differences",
             "source_type": "process",
             "source_label": "Report differences",
-            "target": "7",
+            "target": "recount_inventory",
             "target_type": "decision",
             "target_label": "Recount inventory?",
             "type_of_edge": "solid",
@@ -135,43 +135,32 @@
             "relationship_type": "follows"
         },
         {
-            "source": "7",
+            "source_": "recount_inventory",
             "source_type": "decision",
             "source_label": "Recount inventory?",
-            "target": "8",
+            "target": "post_inventory_documents",
             "target_type": "process",
             "target_label": "Post inventory documents",
             "type_of_edge": "solid",
             "relationship_value": "No",
-            "relationship_type": "branches"
+            "relationship_type": "depends_on"
         },
         {
-            "source": "7",
+            "source_": "recount_inventory",
             "source_type": "decision",
             "source_label": "Recount inventory?",
-            "target": "10",
+            "target": "display_documents",
             "target_type": "process",
             "target_label": "Display documents",
             "type_of_edge": "solid",
             "relationship_value": "Yes",
-            "relationship_type": "branches"
+            "relationship_type": "depends_on"
         },
         {
-            "source": "8",
-            "source_type": "process",
-            "source_label": "Post inventory documents",
-            "target": "9",
-            "target_type": "terminator",
-            "target_label": "End",
-            "type_of_edge": "solid",
-            "relationship_value": "",
-            "relationship_type": "follows"
-        },
-        {
-            "source": "10",
+            "source_": "display_documents",
             "source_type": "process",
             "source_label": "Display documents",
-            "target": "11",
+            "target": "perform_physical_count_of_stock_1",
             "target_type": "process",
             "target_label": "Perform physical count of stock",
             "type_of_edge": "solid",
@@ -179,13 +168,26 @@
             "relationship_type": "follows"
         },
         {
-            "source": "11",
+            "source_": "perform_physical_count_of_stock_1",
             "source_type": "process",
             "source_label": "Perform physical count of stock",
-            "target": "6",
+            "target": "report_differences",
             "target_type": "process",
             "target_label": "Report differences",
-            "type_of_edge": ""
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "post_inventory_documents",
+            "source_type": "process",
+            "source_label": "Post inventory documents",
+            "target": "end",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
         }
     ]
 }

@@ -1,0 +1,97 @@
+{
+    "nodes": [
+        {
+            "id": "START",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "START"
+        },
+        {
+            "id": "Is it necessary?",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Is it necessary?"
+        },
+        {
+            "id": "Will it fail?",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Will it fail?"
+        },
+        {
+            "id": "Knowledge",
+            "type_of_node": "data_store",
+            "shape": "data_store",
+            "label": "Knowledge"
+        },
+        {
+            "id": "Don't do it!",
+            "type_of_node": "terminate",
+            "shape": "end_event",
+            "label": "Don't do it!"
+        },
+        {
+            "id": "Do it!",
+            "type_of_node": "terminate",
+            "shape": "end_event",
+            "label": "Do it!"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "START",
+            "source_type": "start",
+            "source_label": "START",
+            "target": "Is it necessary?",
+            "target_type": "decision",
+            "target_label": "Is it necessary?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Is it necessary?",
+            "source_type": "decision",
+            "source_label": "Is it necessary?",
+            "target": "Will it fail?",
+            "target_type": "decision",
+            "target_label": "Will it fail?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Will it fail?",
+            "source_type": "decision",
+            "source_label": "Will it fail?",
+            "target": "Knowledge",
+            "target_type": "data_store",
+            "target_label": "Knowledge",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Knowledge",
+            "source_type": "data_store",
+            "source_label": "Knowledge",
+            "target": "Do it!",
+            "target_type": "terminate",
+            "target_label": "Do it!",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Knowledge",
+            "source_type": "data_store",
+            "source_label": "Knowledge",
+            "target": "Don't do it!",
+            "target_type": "terminate",
+            "target_label": "Don't do it!",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Lamp plugged in?"
+        },
+        {
+            "id": "2",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Plug in lamp"
+        },
+        {
+            "id": "3",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Lamp plugged in?"
+        },
+        {
+            "id": "4",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Replace bulb"
+        },
+        {
+            "id": "5",
+            "type_of_node": "terminate",
+            "shape": "rectangle",
+            "label": "PRINT K"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "1",
+            "source_type": "decision",
+            "source_label": "Lamp doesn't work",
+            "target": "2",
+            "target_type": "process",
+            "target_label": "Plug in lamp",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "1",
+            "source_type": "decision",
+            "source_label": "Lamp plugged in?",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "Lamp plugged in?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "3",
+            "source_type": "decision",
+            "source_label": "Lamp plugged in?",
+            "target": "4",
+            "target_type": "process",
+            "target_label": "Replace bulb",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "2",
+            "source_type": "process",
+            "source_label": "Plug in lamp",
+            "target": "3",
+            "target_type": "decision",
+            "target_label": "Lamp plugged in?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source_": "4",
+            "source_type": "process",
+            "source_label": "Replace bulb",
+            "target": "5",
+            "target_type": "terminate",
+            "target_label": "PRINT K",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

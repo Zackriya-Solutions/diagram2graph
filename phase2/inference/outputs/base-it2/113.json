@@ -1,0 +1,150 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type_of_node": "decision",
+      "shape": "diamond",
+      "label": "Do you have time to flee?"
+    },
+    {
+      "id": "2",
+      "type_of_node": "decision",
+      "shape": "diamond",
+      "label": "Are you wearing sun glasses?"
+    },
+    {
+      "id": "3",
+      "type_of_node": "decision",
+      "shape": "diamond",
+      "label": "Could you pretend to get a call?"
+    },
+    {
+      "id": "4",
+      "type_of_node": "start",
+      "shape": "oval",
+      "label": "Start"
+    },
+    {
+      "id": "5",
+      "type_of_node": "process",
+      "shape": "rectangle",
+      "label": "Run quickly"
+    },
+    {
+      "id": "6",
+      "type_of_node": "process",
+      "shape": "rectangle",
+      "label": "Don't run"
+    },
+    {
+      "id": "7",
+      "type_of_node": "terminate",
+      "shape": "oval",
+      "label": "Finish"
+    },
+    {
+      "id": "8",
+      "type_of_node": "terminate",
+      "shape": "oval",
+      "label": "Yeah! No need to say hi."
+    }
+  ],
+  "edges": [
+    {
+      "source_": "1",
+      "source_type": "decision",
+      "source_label": "Do you have time to flee?",
+      "target": "5",
+      "target_type": "process",
+      "target_label": "Run quickly",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "2",
+      "source_type": "decision",
+      "source_label": "Are you wearing sun glasses?",
+      "target": "6",
+      "target_type": "process",
+      "target_label": "Don't run",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "3",
+      "source_type": "decision",
+      "source_label": "Could you pretend to get a call?",
+      "target": "8",
+      "target_type": "terminate",
+      "target_label": "Yeah! No need to say hi.",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "6",
+      "source_type": "process",
+      "source_label": "Don't run",
+      "target": "8",
+      "target_type": "terminate",
+      "target_label": "Yeah! No need to say hi.",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "1",
+      "source_type": "decision",
+      "source_label": "Do you have time to flee?",
+      "target": "2",
+      "target_type": "decision",
+      "target_label": "Are you wearing sun glasses?",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "branches"
+    },
+    {
+      "source_": "2",
+      "source_type": "decision",
+      "source_label": "Are you wearing sun glasses?",
+      "target": "3",
+      "target_type": "decision",
+      "target_label": "Could you pretend to get a call?",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "branches"
+    },
+    {
+      "source_": "3",
+      "source_type": "decision",
+      "source_label": "Could you pretend to get a call?",
+      "target": "4",
+      "target_type": "start",
+      "target_label": "Start",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "4",
+      "source_type": "start",
+      "source_label": "Start",
+      "target": "1",
+      "target_type": "decision",
+      "target_label": "Do you have time to flee?",
+      "type_of_edge": "solid",
+      "relationship_value": "",
+      "relationship_type": "follows"
+    },
+    {
+      "source_": "4",
+      "source_type": "start",
+      "source_label": "Start",
+      "target": "2",
+      "target_type": "decision",
+      "target_label": "Are you wearing sun glasses"
+    }
+  ]
+}

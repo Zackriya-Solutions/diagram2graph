@@ -1,0 +1,63 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "Object Detected",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "Object Detected"
+        },
+        {
+            "id": "Drive Forwards",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Drive Forwards"
+        },
+        {
+            "id": "Turn Robot",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Turn Robot"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "Object Detected",
+            "target_type": "decision",
+            "target_label": "Object Detected",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Object Detected",
+            "source_type": "decision",
+            "source_label": "Object Detected",
+            "target": "Drive Forwards",
+            "target_type": "process",
+            "target_label": "Drive Forwards",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Object Detected",
+            "source_type": "decision",
+            "source_label": "Object Detected",
+            "target": "Turn Robot",
+            "target_type": "process",
+            "target_label": "Turn Robot",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "follows"
+        }
+    ]
+}

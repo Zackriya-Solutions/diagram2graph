@@ -1,0 +1,97 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start",
+            "shape": "start_event",
+            "label": "Start"
+        },
+        {
+            "id": "Input",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Input"
+        },
+        {
+            "id": "C<=10?",
+            "type_of_node": "decision",
+            "shape": "diamond",
+            "label": "C<=10?"
+        },
+        {
+            "id": "Output",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "Output"
+        },
+        {
+            "id": "C=C+1",
+            "type_of_node": "process",
+            "shape": "task",
+            "label": "C=C+1"
+        },
+        {
+            "id": "End",
+            "type_of_node": "terminator",
+            "shape": "end_event",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start",
+            "source_label": "Start",
+            "target": "Input",
+            "target_type": "process",
+            "target_label": "Input",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Input",
+            "source_type": "process",
+            "source_label": "Input",
+            "target": "C<=10?",
+            "target_type": "decision",
+            "target_label": "C<=10?",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "C<=10?",
+            "source_type": "decision",
+            "source_label": "C<=10?",
+            "target": "Output",
+            "target_type": "process",
+            "target_label": "Output",
+            "type_of_edge": "solid",
+            "relationship_value": "T",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Output",
+            "source_type": "process",
+            "source_label": "Output",
+            "target": "C=C+1",
+            "target_type": "process",
+            "target_label": "C=C+1",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "C=C+1",
+            "source_type": "process",
+            "source_label": "C=C+1",
+            "target": "End",
+            "target_type": "terminator",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+{
+    "nodes": [
+        {
+            "id": "Start",
+            "type_of_node": "start_event",
+            "shape": "start_end",
+            "label": "Start"
+        },
+        {
+            "id": "Order1",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Order 1"
+        },
+        {
+            "id": "Create",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Create"
+        },
+        {
+            "id": "Flowchart",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Flowchart"
+        },
+        {
+            "id": "Document",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Document"
+        },
+        {
+            "id": "Code",
+            "type_of_node": "process",
+            "shape": "rectangle",
+            "label": "Code"
+        },
+        {
+            "id": "End",
+            "type_of_node": "end_event",
+            "shape": "start_end",
+            "label": "End"
+        }
+    ],
+    "edges": [
+        {
+            "source_": "Start",
+            "source_type": "start_event",
+            "source_label": "Start",
+            "target": "Order1",
+            "target_type": "process",
+            "target_label": "Order 1",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Order1",
+            "source_type": "process",
+            "source_label": "Order 1",
+            "target": "Create",
+            "target_type": "process",
+            "target_label": "Create",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Create",
+            "source_type": "process",
+            "source_label": "Create",
+            "target": "Flowchart",
+            "target_type": "process",
+            "target_label": "Flowchart",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Flowchart",
+            "source_type": "process",
+            "source_label": "Flowchart",
+            "target": "Document",
+            "target_type": "process",
+            "target_label": "Document",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Document",
+            "source_type": "process",
+            "source_label": "Document",
+            "target": "Code",
+            "target_type": "process",
+            "target_label": "Code",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Code",
+            "source_type": "process",
+            "source_label": "Code",
+            "target": "End",
+            "target_type": "end_event",
+            "target_label": "End",
+            "type_of_edge": "solid",
+            "relationship_value": "",
+            "relationship_type": "follows"
+        },
+        {
+            "source_": "Order1",
+            "source_type": "process",
+            "source_label": "Order 1",
+            "target": "Accept?",
+            "target_type": "decision",
+            "target_label": "Accept?",
+            "type_of_edge": "solid",
+            "relationship_value": "Yes",
+            "relationship_type": "depends_on"
+        },
+        {
+            "source_": "Accept?",
+            "source_type": "decision",
+            "source_label": "Accept?",
+            "target": "Create",
+            "target_type": "process",
+            "target_label": "Create",
+            "type_of_edge": "solid",
+            "relationship_value": "No",
+            "relationship_type": "follows"
+        }
+    ]
+}
