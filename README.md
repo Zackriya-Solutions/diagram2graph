@@ -75,7 +75,7 @@ While large proprietary models like Claude 3.5 Sonnet demonstrated initial promi
 
 ## 🚀 How to use
 
-<a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/phase2/inference/diagram2graph-inference.ipynb">
+<a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/blob/dev/phase2/inference/diagram2graph-inference.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
