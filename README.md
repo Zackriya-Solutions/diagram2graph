@@ -1,6 +1,8 @@
 # Digitizing process and flow diagrams using Vision Language Models
 
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Model-blue)](https://huggingface.co/zackriya/diagram2graph) [![License](https://img.shields.io/badge/License-Apache.20-green)](#license)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Model-blue)](https://huggingface.co/zackriya/diagram2graph) [![License](https://img.shields.io/badge/License-Apache.20-green)](#license)<a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/blob/dev/phase2/inference/diagram2graph-inference.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
+</a>
 
 ## Introduction
 
@@ -20,7 +22,7 @@ Building a system for converting images of process diagrams into structured Neo4
 ✅ **Diagram-to-Graph Conversion**  
 Extract nodes, edges, and attributes from images into JSON for Neo4J ingestion
 
-✅ **Optimized Performance**
+✅ **Improved Performance**
 
 - **+14% node detection** & **+23% edge detection** vs base model
 - Runs on **3B-parameter Qwen2.5-VL** with LoRA fine-tuning
@@ -34,6 +36,8 @@ No API dependencies—process diagrams locally
 
 ![High Level Architecture](docs/high_level.png)
 
+> Until now the model was finetuned, and observed the performance improvement. _The Whole system is yet need to be developed(Frontend, Neo4j Integration,etc.)_
+
 1. **Input**: Image of a process/flow diagram
 2. **Processing**: Vision-Language Model (VLM) extracts nodes/edges
 3. **Output**: Structured JSON for representng knowledge graph
@@ -42,7 +46,7 @@ No API dependencies—process diagrams locally
 
 ### Why Fine-Tuning a Smaller Model?
 
-While large proprietary models like Claude 3.5 Sonnet demonstrated initial promise for diagram understanding, we identified strategic advantages in fine-tuning a smaller, open-source model for our task
+Proprietary models are good with generalized application, But when it comes to specific requirements, Finetuning with relevent data may result in good optimized result even with less param models(here 3B)--which means less resource usage
 
 💡 **Key Advantages**  
 | Factor | Large Proprietary Models | Fine-Tuned Qwen2.5-VL |  
@@ -62,9 +66,11 @@ While large proprietary models like Claude 3.5 Sonnet demonstrated initial promi
 | **Epochs**        | 10                              |
 | **Hardware**      | 1x GPU (24GB+ VRAM recommended) |
 
+> Quantized version can be expected sooner
+
 ### Evaluation Results
 
-**Significant improvements in structured extraction accuracy**:
+**Significant improvements in structured extraction score**:
 
 | Metric         | Base Model | Fine-Tuned | Improvement |
 | -------------- | ---------- | ---------- | ----------- |
@@ -75,6 +81,8 @@ While large proprietary models like Claude 3.5 Sonnet demonstrated initial promi
 
 ## 🚀 How to use
 
+**Try it on Google Colab :**
+
 <a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/blob/dev/phase2/inference/diagram2graph-inference.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
@@ -82,7 +90,7 @@ While large proprietary models like Claude 3.5 Sonnet demonstrated initial promi
 ### Installation
 
 ```bash
-pip install -q transformers accelerate datasets qwen-vl-utils[decord]==0.0.8
+pip install -q transformers accelerate qwen-vl-utils[decord]==0.0.8
 ```
 
 ### Inference Example
@@ -127,7 +135,7 @@ def run_inference(image):
     )
     inputs = inputs.to('cuda')
 
-    generated_ids = model.generate(**inputs, max_new_tokens=512)
+    generated_ids = model.generate(**inputs, max_new_tokens=1024)
     generated_ids_trimmed = [
         out_ids[len(in_ids):]
         for in_ids, out_ids
@@ -153,8 +161,10 @@ json.loads(output[0])
 ## 📈 What's Next?
 
 - **Dataset Expansion**: More Data
+- **Quantized Models**: For better resource management
 - **Ollama Integration**: Simplify local deployment
 - **Python Library**: Plug-and-Play use
+- **Neo4J Integration**: Knowledge graph DB integration
 
 ---
 
@@ -165,6 +175,10 @@ json.loads(output[0])
 - [Hugging Face Community](https://huggingface.co/)
 
 ---
+
+## Associated Content
+
+- [Model](https://huggingface.co/zackriya/diagram2graph)
 
 ## 📜 License
 
