@@ -36,7 +36,7 @@ No API dependencies—process diagrams locally
 
 ![High Level Architecture](docs/high_level.png)
 
-> Until now the model was finetuned, and observed the performance improvement. _The Whole system is yet need to be developed(Frontend, Neo4j Integration,etc.)_
+> **Until now the model was finetuned,** and observed the performance improvement. _The Whole system is yet need to be developed(Frontend, Neo4j Integration,etc.)_
 
 1. **Input**: Image of a process/flow diagram
 2. **Processing**: Vision-Language Model (VLM) extracts nodes/edges
