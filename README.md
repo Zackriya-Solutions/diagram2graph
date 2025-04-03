@@ -6,13 +6,17 @@
 
   <p>
     <a href="https://huggingface.co/zackriya/diagram2graph">
-      <img src="https://img.shields.io/badge/Hugging%20Face-Model-blue" alt="License" />
+      <img src="https://img.shields.io/badge/Hugging%20Face-Model-blue" alt="Model" />
+    </a>
+     <a href="https://huggingface.co/datasets/zackriya/diagramJSON">
+      <img src="https://img.shields.io/badge/Hugging_Face-Dataset-teal" alt="Dataset" />
     </a>
        <a href="LICENSE">
       <img src="https://img.shields.io/badge/License-Apache.20-green" alt="License" />
        </a>
-    <a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/blob/dev/phase2/inference/diagram2graph-inference.ipynb">
+    <a target="_blank" href="https://colab.research.google.com/drive/1IuC1S-M5EU2LtIIMvX5Y-DPD5q0HVdpw">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
+    </a>
   </p>
 </div>
 
