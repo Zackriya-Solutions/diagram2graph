@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/ce9cf82f-dad7-4763-95cb-18e594dad13f" alt="Diagram2Graph header" width="800" style="border-radius:10px;"/>
+  <img src="docs/diagram2graph_cmpr.png" alt="Diagram2Graph header" width="800" style="border-radius:10px;"/>
 
   <h2>Digitizing process and flow diagrams using Vision Language Models</h2>
 
