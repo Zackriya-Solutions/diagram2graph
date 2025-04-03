@@ -1,8 +1,20 @@
-# Digitizing process and flow diagrams using Vision Language Models
 
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Model-blue)](https://huggingface.co/zackriya/diagram2graph) [![License](https://img.shields.io/badge/License-Apache.20-green)](#license)<a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/blob/dev/phase2/inference/diagram2graph-inference.ipynb">
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ce9cf82f-dad7-4763-95cb-18e594dad13f" alt="Diagram2Graph header" width="800" style="border-radius:10px;"/>
+
+  <h2>Digitizing process and flow diagrams using Vision Language Models</h2>
+
+  <p>
+    <a href="https://huggingface.co/zackriya/diagram2graph">
+      <img src="https://img.shields.io/badge/Hugging%20Face-Model-blue" alt="License" />
+    </a>
+       <a href="https://github.com/thepersonalaicompany/amurex/blob/main/LICENSE">
+      <img src="https://img.shields.io/badge/License-Apache.20-green" alt="License" />
+       </a>
+    <a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/blob/dev/phase2/inference/diagram2graph-inference.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
-</a>
+  </p>
+</div>
 
 ## Introduction
 
