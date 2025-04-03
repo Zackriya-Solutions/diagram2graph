@@ -1,12 +1,29 @@
-# Digitizing process and flow diagrams using Vision Language Models
+<div align="center">
+  <img src="docs/diagram2graph_cmpr.png" alt="Diagram2Graph header" width="800" style="border-radius:10px;"/>
 
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Model-blue)](https://huggingface.co/zackriya/diagram2graph) [![License](https://img.shields.io/badge/License-Apache.20-green)](#license)<a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/blob/dev/phase2/inference/diagram2graph-inference.ipynb">
+  <h1>Digitizing diagrams using Vision Language Models</h1>
+
+  <p>
+    <a href="https://huggingface.co/zackriya/diagram2graph">
+      <img src="https://img.shields.io/badge/Hugging%20Face-Model-blue" alt="Model" />
+    </a>
+     <a href="https://huggingface.co/datasets/zackriya/diagramJSON">
+      <img src="https://img.shields.io/badge/Hugging_Face-Dataset-teal" alt="Dataset" />
+    </a>
+       <a href="LICENSE">
+      <img src="https://img.shields.io/badge/License-Apache.20-green" alt="License" />
+       </a>
+    <a target="_blank" href="https://colab.research.google.com/drive/1IuC1S-M5EU2LtIIMvX5Y-DPD5q0HVdpw">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
-</a>
+    </a>
+  </p>
+</div>
 
 ## Introduction
 
 Building a system for converting images of process diagrams into structured Neo4J-compatible JSON format using AI-based Vision models. The project involves an initial exploration of the same using general purpose models(from Anthropic), followed by fine-tuning a smaller vision language model for improved performance and latency reduction.
+
+[![Demo](docs/inference_demo_pic.png)](https://www.youtube.com/watch?v=TFvXnxJDgiE)
 
 ## Objectives
 
@@ -83,7 +100,7 @@ Proprietary models are good with generalized application, But when it comes to s
 
 **Try it on Google Colab :**
 
-<a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/blob/dev/phase2/inference/diagram2graph-inference.ipynb">
+<a target="_blank" href="https://colab.research.google.com/drive/1IuC1S-M5EU2LtIIMvX5Y-DPD5q0HVdpw">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
