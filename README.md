@@ -99,7 +99,7 @@ Proprietary models are good with generalized application, But when it comes to s
 
 **Try it on Google Colab :**
 
-<a target="_blank" href="https://colab.research.google.com/github/Zackriya-Solutions/diagram2graph/blob/dev/phase2/inference/diagram2graph-inference.ipynb">
+<a target="_blank" href="https://colab.research.google.com/drive/1IuC1S-M5EU2LtIIMvX5Y-DPD5q0HVdpw">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
