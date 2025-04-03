@@ -1,4 +1,3 @@
-
 <div align="center">
   <img src="docs/diagram2graph_cmpr.png" alt="Diagram2Graph header" width="800" style="border-radius:10px;"/>
 
@@ -23,6 +22,8 @@
 ## Introduction
 
 Building a system for converting images of process diagrams into structured Neo4J-compatible JSON format using AI-based Vision models. The project involves an initial exploration of the same using general purpose models(from Anthropic), followed by fine-tuning a smaller vision language model for improved performance and latency reduction.
+
+[![Demo](docs/inference_demo_pic.png)](https://www.youtube.com/watch?v=TFvXnxJDgiE)
 
 ## Objectives
 
