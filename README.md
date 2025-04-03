@@ -2,7 +2,7 @@
 <div align="center">
   <img src="docs/diagram2graph_cmpr.png" alt="Diagram2Graph header" width="800" style="border-radius:10px;"/>
 
-  <h2>Digitizing process and flow diagrams using Vision Language Models</h2>
+  <h1>Digitizing diagrams using Vision Language Models</h1>
 
   <p>
     <a href="https://huggingface.co/zackriya/diagram2graph">
