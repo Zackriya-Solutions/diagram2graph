@@ -7,15 +7,19 @@
     <a href="https://huggingface.co/zackriya/diagram2graph">
       <img src="https://img.shields.io/badge/Hugging%20Face-Model-blue" alt="Model" />
     </a>
+    <a href="https://huggingface.co/zackriya/diagram2graph-adapters">
+      <img src="https://img.shields.io/badge/Hugging%20Face-Adapter-red" alt="Adapter" />
+    </a>
      <a href="https://huggingface.co/datasets/zackriya/diagramJSON">
       <img src="https://img.shields.io/badge/Hugging_Face-Dataset-teal" alt="Dataset" />
+    </a>
+    <br/>
+    <a target="_blank" href="https://colab.research.google.com/drive/1IuC1S-M5EU2LtIIMvX5Y-DPD5q0HVdpw">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
     </a>
        <a href="LICENSE">
       <img src="https://img.shields.io/badge/License-Apache.20-green" alt="License" />
        </a>
-    <a target="_blank" href="https://colab.research.google.com/drive/1IuC1S-M5EU2LtIIMvX5Y-DPD5q0HVdpw">
-<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/>
-    </a>
   </p>
 </div>
 
@@ -79,7 +83,7 @@ Proprietary models are good with generalized application, But when it comes to s
 | Specification     | Details                         |
 | ----------------- | ------------------------------- |
 | **Training Data** | 200 hand-labeled diagrams       |
-| **Method**        | LoRA (PEFT) + bf16 precision    |
+| **Method**        | LoRA (PEFT) + f32 precision     |
 | **Epochs**        | 10                              |
 | **Hardware**      | 1x GPU (24GB+ VRAM recommended) |
 
@@ -118,11 +122,11 @@ import torch
 
 # Load fine-tuned model
 model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-    "zackriya/diagram2graph",
+    "zackriya/diagram2graph-adapters",
     device_map="auto",
     torch_dtype=torch.bfloat16
 )
-processor = Qwen2_5_VLProcessor.from_pretrained("zackriya/diagram2graph")
+processor = Qwen2_5_VLProcessor.from_pretrained("zackriya/diagram2graph-adapters")
 
 SYSTEM_MESSAGE = """You are a Vision Language Model specialized in extracting structured data from visual representations of process and flow diagrams.
 Your task is to analyze the provided image of a diagram and extract the relevant information into a well-structured JSON format.
@@ -193,9 +197,21 @@ json.loads(output[0])
 
 ---
 
-## Associated Content
+## 🤝 Collaborate
+
+Are you interested in fine tuning your own model for your use case or want to explore how we can help you? Let's collaborate.
+
+[Zackriya Solutions](https://www.zackriya.com/collaboration-form)
+
+---
+
+## 🔗 Associated Content
 
 - [Model](https://huggingface.co/zackriya/diagram2graph)
+- [Adapter](https://huggingface.co/zackriya/Diagram2graph-adapters)
+- [Dev Blog](https://dev.to/zackriya/diagram2graph-fine-tuning-a-vision-language-model-to-extract-knowledge-graphs-from-diagrams-5f7p)
+
+---
 
 ## 📜 License
 
